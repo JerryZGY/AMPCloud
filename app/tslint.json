@@ -1,0 +1,25 @@
+{
+    "extends": "tslint:latest",
+    "rules": {
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "ordered-imports": false,
+        "max-line-length": [
+            false
+        ],
+        "member-ordering": [
+            true,
+            {
+                "order": "fields-first"
+            }
+        ],
+        "object-literal-sort-keys": false,
+        "radix": false,
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ]
+    }
+}
