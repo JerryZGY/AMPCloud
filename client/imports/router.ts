@@ -9,12 +9,12 @@ import { Test } from './test/test';
 
 const routes: Route[] = [
     { path: '', component: Main },
-    { path: 'test', component: Test }
+    { path: 'test', component: Test },
 ];
 
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot(routes)],
     declarations: [Main, Test],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
 export class Router { }

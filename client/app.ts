@@ -7,14 +7,14 @@ import { Router } from './imports/router';
 
 @Component({
     selector: 'app',
-    template: '<router-outlet></router-outlet>'
+    template: '<router-outlet></router-outlet>',
 })
 export class App { }
 
 @NgModule({
     imports: [Router],
     declarations: [App],
-    bootstrap: [App]
+    bootstrap: [App],
 })
 export class AppModule { }
 
