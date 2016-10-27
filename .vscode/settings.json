@@ -1,0 +1,10 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.eol": "\n",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.meteor": true
+    }
+}
