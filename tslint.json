@@ -5,7 +5,9 @@
             true,
             "single"
         ],
-        "ordered-imports": false,
+        "ordered-imports": [
+            false
+        ],
         "max-line-length": [
             false
         ],
@@ -20,6 +22,9 @@
         "variable-name": [
             true,
             "ban-keywords"
+        ],
+        "max-classes-per-file": [
+            false
         ]
     }
 }
