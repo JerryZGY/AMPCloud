@@ -25,6 +25,7 @@
         ],
         "max-classes-per-file": [
             false
-        ]
+        ],
+        "arrow-parens": false
     }
 }
