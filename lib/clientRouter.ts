@@ -1,7 +1,7 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-class ClientRouter {
+export default class ClientRouter {
     constructor() {
         BlazeLayout.setRoot('body');
     }
@@ -18,5 +18,3 @@ type Route = {
     name: string;
     path: string;
 };
-
-export default ClientRouter;
