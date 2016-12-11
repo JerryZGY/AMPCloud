@@ -6,13 +6,13 @@ interface ICollection {
   _id?: string;
 }
 
-interface IProject extends ICollection {
+export interface IProject extends ICollection {
     projectNo: number;
     projectName: string;
-    design: Design;
-    machining: Machining;
-    molding: Molding;
     buildDate: Date;
+    design?: Design;
+    machining?: Machining;
+    molding?: Molding;
 }
 
 type Design = {
