@@ -1,22 +1,16 @@
 <template name="home">
-  <table class="table striped hovered border bordered" style="text-align:center">
+  <table class="table hovered border bordered" style="text-align:center">
     <thead>
-      <tr class="bg-darkCobalt">
+      <tr class="bg-tr">
         <th style="color:white; text-align:center">專案工號</th>
         <th style="color:white; text-align:center">階段狀態</th>
         <th style="color:white; text-align:center">詳細資訊</th>
       </tr>
     </thead>
     <tbody>
-      <!--<tr *ngFor="let project of projects | async">
-        <td>{{project.projectNo}}</td>
-        <td>{{project.designNo}}</td>
-        <td><button class="button"><span class="mif-info"></span></button></td>
-      </tr>-->
+      {{#each projects}}
+        {{> project}}
+      {{/each}}
     </tbody>
   </table>
-  <!--<button class="shortcut-button bg-magenta bg-active-darkMagenta fg-white">
-        <span class="icon mif-tools"></span>
-        <span class="title">Settings</span>
-    </button>-->
 </template>
