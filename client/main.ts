@@ -8,6 +8,7 @@ import '../node_modules/metro-dist/js/metro.min.js';
 
 import '../imports/ui/home';
 import '../imports/ui/ctrl';
+import '../imports/ui/design';
 
 import ClientRouter from '../lib/clientRouter';
 
@@ -15,4 +16,5 @@ const router = new ClientRouter();
 router.initRoutes([
   { name: 'home', path: '/' },
   { name: 'ctrl', path: '/ctrl' },
+  { name: 'design', path: '/design/:id' },
 ]);
