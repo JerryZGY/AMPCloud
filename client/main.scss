@@ -1,31 +1,48 @@
 @font-face {
     font-family: 'metro';
-    src: url('/fonts/metro.eot');
-    src: url('/fonts/metro.eot?#iefix') format('embedded-opentype'), url('/fonts/metro.svg#metro') format('svg'), url('/fonts/metro.woff') format('woff'), url('/fonts/metro.ttf') format('truetype');
+    src: url('/amp/fonts/metro.eot');
+    src: url('/amp/fonts/metro.eot?#iefix') format('embedded-opentype'), url('/amp/fonts/metro.svg#metro') format('svg'), url('/amp/fonts/metro.woff') format('woff'), url('/amp/fonts/metro.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+.control {
+    margin: .625rem 0;
+}
+
+.shortcut-button {
+    margin: auto !important;
+    display: block !important;
+}
+
 .bg-tr {
-    background-color:#0879A5;
+    background-color: #0879A5;
 }
+
 .bg-ready {
-    background-color:#D0CCCB;
+    background-color: #D0CCCB;
 }
+
 .bg-running {
-    background-color:#FFEBA6;
+    background-color: #FFEBA6;
 }
+
 .bg-finished {
-    background-color:#93E3B0;
+    background-color: #93E3B0;
 }
+
 .bg-error {
-    background-color:#F8C4B6;
+    background-color: #F8C4B6;
 }
+
 .bg-frozen {
-    background-color:#9AD6F0;
+    background-color: #9AD6F0;
 }
+
 .progress.pg-running .bar {
-    background-color:#FFC700;
+    background-color: #FFC700;
 }
+
 .progress.pg-error .bar {
-    background-color:#EB613C;
+    background-color: #EB613C;
 }
