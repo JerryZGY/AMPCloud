@@ -1,0 +1,39 @@
+.design {
+    .app-bar {
+        .main {
+            line-height: 3.125rem;
+            padding: 0 .625rem;
+            font-size: 1rem;
+            cursor: default;
+            color: inherit;
+            display: block;
+            float: left;
+            position: relative;
+            height: 3.125rem;
+            background-color: inherit;
+        }
+        .identify {
+            @extend .main;
+            padding: unset;
+            div {
+                display: inline-block;
+                color: #6D6D6D;
+                background-color: #EBEBE4;
+                padding: 0 .625rem;
+            }
+        }
+        .sub {
+            @extend .main;
+            cursor: pointer;
+        }
+        .app-bar-menu li ul {
+            border: none;
+            li a {
+                padding: .75rem 1.2rem;
+                span:nth-child(2) {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
