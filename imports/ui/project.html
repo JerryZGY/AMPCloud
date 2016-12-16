@@ -1,28 +1,27 @@
 <template name="project">
-    <tr id="{{_id}}">
-        <td>{{_id}}</td>
-        <td style="padding:unset;">
-            <div class="flex-grid">
-                <div class="row cell-auto-size">
-                    <div class="cell">
-                        <div class="status bg-running">設計</div>
-                        <div class="design progress pg-running" data-value="{{design.Percent}}" data-animate="500" data-role="progress"></div>
-                    </div>
-                    <div class="cell">
-                        <div class="status bg-ready">排程與規劃</div>
-                        <div class="scheduling progress pg-error" data-value="20" data-animate="500" data-role="progress"></div>
-                    </div>
-                    <div class="cell">
-                        <div class="status bg-ready">加工與量測</div>
-                        <div class="machining progress" data-value="30" data-animate="500" data-role="progress"></div>
-                    </div>
-                    <div class="cell">
-                        <div class="status bg-ready">成型</div>
-                        <div class="molding progress" data-value="40" data-animate="500" data-role="progress"></div>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td><a class="info-button"><span class="mif-info mif-2x"></span></a></td>
-    </tr>
+  <tr id="{{_id}}" class="project">
+    <td>{{_id}}</td>
+    <td>
+      <div class="flex-grid">
+        <div class="row cell-auto-size">
+          <div class="cell">
+            <div class="status running">設計</div>
+            <div class="design progress pg-running" data-value="{{design.Percent}}" data-animate="500" data-role="progress"></div>
+          </div>
+          <div class="cell">
+            <div class="status ready">排程與規劃</div>
+            <div class="scheduling progress pg-error" data-value="20" data-animate="500" data-role="progress"></div>
+          </div>
+          <div class="cell">
+            <div class="status ready">加工與量測</div>
+            <div class="machining progress" data-value="30" data-animate="500" data-role="progress"></div>
+          </div>
+          <div class="cell">
+            <div class="status ready">成型</div>
+            <div class="molding progress" data-value="40" data-animate="500" data-role="progress"></div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
 </template>
