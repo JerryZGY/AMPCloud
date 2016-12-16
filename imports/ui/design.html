@@ -1,110 +1,110 @@
 <template name="design">
-    <div class="app-bar fixed-top">
-        <div class="main">
-            <span class="mif-pencil"></span>
-            <span>Design</span>
-        </div>
-        <div class="identify">
-            <div>
-                <span class="mif-versions mif-2x"></span>
-                <span>PJ20161206001</span>
-            </div>
-        </div>
-        <a class="sub">
-            <span class="mif-home"></span>
-            <span>Home</span>
+  <div class="app-bar fixed-top">
+    <div class="main">
+      <span class="mif-pencil"></span>
+      <span>Design</span>
+    </div>
+    <div class="identify">
+      <div>
+        <span class="mif-versions mif-2x"></span>
+        <span>PJ20161206001</span>
+      </div>
+    </div>
+    <a class="app-bar-element">
+      <span class="mif-home"></span>
+      <span>Home</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-indent-increase"></span>
+      <span>Scheduling</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-hammer"></span>
+      <span>Machining</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-widgets"></span>
+      <span>Molding</span>
+    </a>
+    <ul class="app-bar-menu place-right">
+      <li>
+        <a class="dropdown-toggle">
+          <span class="mif-user mif-3x"></span>
+          <span>Jerry Zang</span>
         </a>
-        <a class="sub">
-            <span class="mif-indent-increase"></span>
-            <span>Scheduling</span>
-        </a>
-        <a class="sub">
-            <span class="mif-hammer"></span>
-            <span>Machining</span>
-        </a>
-        <a class="sub">
-            <span class="mif-widgets"></span>
-            <span>Molding</span>
-        </a>
-        <ul class="app-bar-menu place-right">
-            <li>
-                <a class="dropdown-toggle">
-                    <span class="mif-user mif-3x"></span>
-                    <span>Jerry Zang</span>
-                </a>
-                <ul class="d-menu" data-role="dropdown">
-                    <li>
-                        <a>
-                            <span class="mif-magic-wand"></span>
-                            <span>Preferences</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="mif-exit"></span>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+        <ul class="d-menu" data-role="dropdown">
+          <li>
+            <a>
+              <span class="mif-magic-wand"></span>
+              <span>Preferences</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="mif-exit"></span>
+              <span>Logout</span>
+            </a>
+          </li>
         </ul>
-    </div>
-    <div class="page-content" style="padding-top: 3.125rem;">
-        <div class="flex-grid">
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="flex-grid">
+      <div class="row">
+        <div class="cell auto-size padding20">
+          <h1 class="text-light">
+            <span class="mif-pencil"></span>
+            <span>Virtual machines</span>
+          </h1>
+          <hr class="thin bg-grayLighter">
+          <div class="flex-grid">
             <div class="row">
-                <div class="cell auto-size padding20">
-                    <h1 class="text-light" style="text-align: center;">
-                        <span class="mif-pencil"></span>
-                        <span>Virtual machines</span>
-                    </h1>
-                    <hr class="thin bg-grayLighter">
-                    <div class="flex-grid">
-                        <div class="row">
-                            <div class="cell size6" style="min-height: 280px; max-height: 340px;">
-                                <div style="background-image: url('Demo.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center;min-height: inherit; width: 100%; height: 100%;"></div>
-                            </div>
-                            <div class="cell size6" style="min-height: 280px; max-height: 340px;">
-                                <table class="table striped hovered" style="margin: unset;">
-                                    <tbody>
-                                    <tr>
-                                        <th>projectNo</th>
-                                        <td>PJ20161206001</td>
-                                    </tr>
-                                    <tr>
-                                        <th>productName</th>
-                                        <td>Mobile</td>
-                                    </tr>
-                                    <tr>
-                                        <th>orderNo</th>
-                                        <td>CYCU20161206001</td>
-                                    </tr>
-                                    <tr>
-                                        <th>moldNo</th>
-                                        <td>MD20161206001</td>
-                                    </tr>
-                                    <tr>
-                                        <th>customerNo</th>
-                                        <td>0002</td>
-                                    </tr>
-                                    <tr>
-                                        <th>template</th>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th>startDate</th>
-                                        <td>2016-12-30 00:00:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>endDate</th>
-                                        <td>2016-12-30 00:00:00</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="cell size6">
+                <div class="img"></div>
+              </div>
+              <div class="cell size6">
+                <table class="table striped hovered">
+                  <tbody>
+                    <tr>
+                      <th>projectNo</th>
+                      <td>PJ20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>productName</th>
+                      <td>Mobile</td>
+                    </tr>
+                    <tr>
+                      <th>orderNo</th>
+                      <td>CYCU20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>moldNo</th>
+                      <td>MD20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>customerNo</th>
+                      <td>0002</td>
+                    </tr>
+                    <tr>
+                      <th>template</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>startDate</th>
+                      <td>2016-12-30 00:00:00</td>
+                    </tr>
+                    <tr>
+                      <th>endDate</th>
+                      <td>2016-12-30 00:00:00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
