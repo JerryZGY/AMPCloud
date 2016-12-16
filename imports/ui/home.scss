@@ -1,18 +1,18 @@
 .home {
-  .flex-grid {
+  >.flex-grid {
     margin: .625rem 0;
-    .row .cell {
-      button {
+    >.row>.cell {
+      >button {
         margin: auto !important;
         display: block !important;
       }
     }
   }
-  table {
+  >table {
     text-align: center;
-    thead tr {
+    >thead>tr {
       background-color: #0879A5;
-      th {
+      >th {
         color: white;
         text-align: center;
         &.identify {
