@@ -1,5 +1,5 @@
 <template name="home">
-  <div class="flex-grid control">
+  <div class="flex-grid">
     <div class="row cell-auto-size">
       <div class="cell">
         <button id="create" class="shortcut-button bg-green bg-active-darkGreen fg-white">
@@ -33,12 +33,11 @@
       </div>
     </div>
   </div>
-  <table class="table hovered border bordered" style="text-align:center">
+  <table class="table hovered border bordered">
     <thead>
-      <tr class="bg-tr">
-        <th style="color:white; text-align:center">專案工號</th>
-        <th style="color:white; text-align:center">階段狀態</th>
-        <th style="color:white; text-align:center">詳細資訊</th>
+      <tr>
+        <th class="identify">專案工號</th>
+        <th>階段狀態</th>
       </tr>
     </thead>
     <tbody>

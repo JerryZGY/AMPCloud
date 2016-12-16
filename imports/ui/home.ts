@@ -1,4 +1,5 @@
 import './home.html';
+import './home.scss';
 import './project';
 import { Mongo } from 'meteor/mongo';
 import { Projects, IProject } from '../../lib/collections';
@@ -14,6 +15,7 @@ Template['home'].onCreated(() => {
             },
         });
     });
+    $('body').attr('class', 'home');
 });
 
 Template['home'].helpers({

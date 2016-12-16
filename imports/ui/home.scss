@@ -1,0 +1,24 @@
+.home {
+  .flex-grid {
+    margin: .625rem 0;
+    .row .cell {
+      button {
+        margin: auto !important;
+        display: block !important;
+      }
+    }
+  }
+  table {
+    text-align: center;
+    thead tr {
+      background-color: #0879A5;
+      th {
+        color: white;
+        text-align: center;
+        &.identify {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
