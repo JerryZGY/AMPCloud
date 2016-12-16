@@ -2,7 +2,7 @@ import './home.html';
 import './home.scss';
 import './project';
 import { Mongo } from 'meteor/mongo';
-import { Projects, IProject } from '../../lib/collections';
+import { Projects } from '../../lib/collections';
 
 
 Template['home'].onCreated(() => {

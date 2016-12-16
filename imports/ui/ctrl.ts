@@ -1,5 +1,5 @@
 import './ctrl.html';
-import { Projects, IProject } from '../../lib/collections';
+import { Projects } from '../../lib/collections';
 
 Template['ctrl'].onCreated(() => {
     Meteor.subscribe('projects');
