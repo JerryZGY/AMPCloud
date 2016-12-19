@@ -1,16 +1,6 @@
 .project {
   cursor: pointer;
-  &:hover>td:nth-child(2) {
-    opacity: 0.8;
-  }
-  &:active {
-    td:nth-child(1) {
-      background-color:rgba(28,183,236,.1);
-    }
-    td:nth-child(2) {
-      opacity: 1;
-    }
-  }
+  user-select: none;
   >td:nth-child(2) {
     padding: unset;
     >.flex-grid>.row>.cell {
@@ -41,6 +31,12 @@
         &.pg-error>.bar {
           background-color: #EB613C;
         }
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 1;
       }
     }
   }
