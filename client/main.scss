@@ -1,7 +1,17 @@
 @font-face {
   font-family: 'metro';
-  src: url('/amp/fonts/metro.eot');
-  src: url('/amp/fonts/metro.eot?#iefix') format('embedded-opentype'), url('/amp/fonts/metro.svg#metro') format('svg'), url('/amp/fonts/metro.woff') format('woff'), url('/amp/fonts/metro.ttf') format('truetype');
+  src: url('/fonts/metro.eot');
+  src: url('/fonts/metro.eot?#iefix') format('embedded-opentype'), url('/fonts/metro.svg#metro') format('svg'), url('/fonts/metro.woff') format('woff'), url('/fonts/metro.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+.design > .content > .flex-grid > .row > .cell > .flex-grid > .row > .cell > .img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("Demo.jpg");
 }

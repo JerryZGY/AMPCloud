@@ -10,6 +10,9 @@
   }
   >table {
     text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     >thead>tr {
       background-color: #0879A5;
       >th {
