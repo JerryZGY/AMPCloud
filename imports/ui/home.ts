@@ -4,14 +4,13 @@ import './project';
 import { Mongo } from 'meteor/mongo';
 import { Projects } from '../../lib/collections';
 
-
 Template['home'].onCreated(() => {
     Meteor.subscribe('projects', () => {
         const projects = Projects.find();
         projects.observe({
             changed(newDoc: any) {
                 const _id = newDoc._id;
-                $(`#${_id} .design`).data('progress').set(newDoc.design.Percent);
+                $(`#${_id} .design`).data('progress').set(0);
             },
         });
     });
@@ -24,9 +23,9 @@ Template['home'].helpers({
 
 Template['home'].events({
     'click #create'() {
-        console.log(Meteor.call('projects.insert'));
+        console.log(Meteor.call('createProject', { projectNo: 'PJ20161206001' }));
     },
     'click #design'() {
-        Meteor.call('design.update');
+        Meteor.call('updateDesign', { projectNo: 456 });
     },
 });
