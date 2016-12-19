@@ -1,10 +1,6 @@
 import './ctrl.html';
-import { Projects } from '../../lib/collections';
+import './ctrl.scss';
 
 Template['ctrl'].onCreated(() => {
-    Meteor.subscribe('projects');
-});
-
-Template['ctrl'].helpers({
-    projects: () => Projects.find(),
+    $('body').attr('class', 'ctrl');
 });

@@ -1,10 +1,105 @@
 <template name="ctrl">
-  <div class="flex-grid" style="width:500px;">
-    <div class="row cell-auto-size">
-      <div class="cell">設計</div>
-      <div class="cell">排程與規劃</div>
-      <div class="cell">加工與量測</div>
-      <div class="cell">成型</div>
+  <div class="app-bar fixed-top">
+    <div class="main">
+      <span class="mif-pencil"></span>
+      <span>Design</span>
+    </div>
+    <div class="identify">
+      <div>
+        <span class="mif-versions mif-2x"></span>
+        <span>PJ20161206001</span>
+      </div>
+    </div>
+    <a class="app-bar-element">
+      <span class="mif-home"></span>
+      <span>Home</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-indent-increase"></span>
+      <span>Scheduling</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-hammer"></span>
+      <span>Machining</span>
+    </a>
+    <a class="app-bar-element">
+      <span class="mif-widgets"></span>
+      <span>Molding</span>
+    </a>
+    <ul class="app-bar-menu place-right">
+      <li>
+        <a class="dropdown-toggle">
+          <span class="mif-user mif-3x"></span>
+          <span>Jerry Zang</span>
+        </a>
+        <ul class="d-menu" data-role="dropdown">
+          <li>
+            <a>
+              <span class="mif-magic-wand"></span>
+              <span>Preferences</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="mif-exit"></span>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="svgContainer">
+      <svg viewBox="0 0 375 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0 1 L0,5 L3,3 z" fill="#D0CCCB" />
+          </marker>
+          <line id="arrowLine" x1="75" y1="50" x2="75" y2="108" stroke="#D0CCCB" stroke-width="5" marker-end="url(#arrow)" />
+        </defs>
+        <g transform="translate(12.5,12.5)">
+          <use xlink:href="#arrowLine" />
+          <use xlink:href="#arrowLine" y="125"/>
+          <use xlink:href="#arrowLine" x="200" y="125"/>
+          <use xlink:href="#arrowLine" y="250"/>
+          <use xlink:href="#arrowLine" y="375"/>
+          <use xlink:href="#arrowLine" y="500"/>
+          <use xlink:href="#arrowLine" y="625"/>
+          <g id="MS_Create">
+            <rect width="150" height="50" rx="10" ry="10" class="running"/>
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模型建立</text>
+          </g>
+          <g id="MS_Surface_Design">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">分模面設計</text>
+          </g>
+          <g id="MB_Create">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模座建立</text>
+          </g>
+          <g id="MB_Detail">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模座細部設計</text>
+          </g>
+          <g id="MS_Detail">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">機構細部設計</text>
+          </g>
+          <g id="MB_Total_Asm">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">總組立</text>
+          </g>
+          <g id="MB_Asm_Figure">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">組力圖</text>
+          </g>
+          <g id="MB_Com_Figure">
+            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
+            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">零件圖</text>
+          </g>
+        </g>
+      </svg>
     </div>
   </div>
 </template>
