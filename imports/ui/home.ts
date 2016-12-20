@@ -15,6 +15,7 @@ Template['home'].onCreated(() => {
         });
     });
     $('body').attr('class', 'home');
+    $('#icon').attr('class', 'mif-home');
 });
 
 Template['home'].helpers({
