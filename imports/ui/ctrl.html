@@ -1,108 +1,57 @@
 <template name="ctrl">
-  <div class="app-bar fixed-top">
-    <div class="main">
-      <span class="mif-pencil"></span>
-      <span>Design</span>
-    </div>
-    <div class="identify">
-      <div>
-        <span class="mif-versions mif-2x"></span>
-        <span>PJ20161206001</span>
-      </div>
-    </div>
-    <a class="app-bar-element">
-      <span class="mif-home"></span>
-      <span>Home</span>
-    </a>
-    <a class="app-bar-element">
-      <span class="mif-indent-increase"></span>
-      <span>Scheduling</span>
-    </a>
-    <a class="app-bar-element">
-      <span class="mif-hammer"></span>
-      <span>Machining</span>
-    </a>
-    <a class="app-bar-element">
-      <span class="mif-widgets"></span>
-      <span>Molding</span>
-    </a>
-    <ul class="app-bar-menu place-right">
-      <li>
-        <a class="dropdown-toggle">
-          <span class="mif-user mif-3x"></span>
-          <span>Jerry Zang</span>
-        </a>
-        <ul class="d-menu" data-role="dropdown">
-          <li>
-            <a>
-              <span class="mif-magic-wand"></span>
-              <span>Preferences</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="mif-exit"></span>
-              <span>Logout</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
   <div class="content">
-    <div class="svgContainer">
-      <svg viewBox="0 0 375 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
-            <path d="M0 1 L0,5 L3,3 z" fill="#D0CCCB" />
-          </marker>
-          <line id="arrowVLine" class="line" x1="75" y1="50" x2="75" y2="108" marker-end="url(#arrow)" />
-          <line id="arrowHLine" class="line" x2="33" marker-end="url(#arrow)" />
-          <polyline id="arrowPLine" class="line" points="75,50 75,85 -125,85" />
-        </defs>
-        <g transform="translate(12.5,12.5)">
-          <g id="MS_Create">
-            <use xlink:href="#arrowVLine" />
-            <rect class="ready" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">模型建立</text>
-          </g>
-          <g id="MS_Surface_Design">
-            <use xlink:href="#arrowVLine" />
-            <use xlink:href="#arrowHLine" x="150" y="25" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">分模面設計</text>
-          </g>
-          <g id="MB_Create">
-            <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">模座建立</text>
-          </g>
-          <g id="MB_Detail">
-            <use xlink:href="#arrowPLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">模座細部設計</text>
-          </g>
-          <g id="MS_Detail">
-            <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">機構細部設計</text>
-          </g>
-          <g id="MB_Total_Asm">
-            <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">總組立</text>
-          </g>
-          <g id="MB_Asm_Figure">
-            <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">組力圖</text>
-          </g>
-          <g id="MB_Com_Figure">
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
-            <text x="75" y="33">零件圖</text>
-          </g>
-        </g>
-      </svg>
+    <div class="flex-grid">
+      <div class="row">
+        <div class="cell auto-size padding20">
+          <h1 class="text-light">Virtual machines</h1>
+          <hr class="thin bg-grayLighter">
+          <div class="flex-grid">
+            <div class="row">
+              <div class="cell size6">
+                <div class="img"></div>
+              </div>
+              <div class="cell size6">
+                <table class="table striped hovered">
+                  <tbody>
+                    <tr>
+                      <th>projectNo</th>
+                      <td>PJ20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>productName</th>
+                      <td>Mobile</td>
+                    </tr>
+                    <tr>
+                      <th>orderNo</th>
+                      <td>CYCU20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>moldNo</th>
+                      <td>MD20161206001</td>
+                    </tr>
+                    <tr>
+                      <th>customerNo</th>
+                      <td>0002</td>
+                    </tr>
+                    <tr>
+                      <th>template</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>startDate</th>
+                      <td>2016-12-30 00:00:00</td>
+                    </tr>
+                    <tr>
+                      <th>endDate</th>
+                      <td>2016-12-30 00:00:00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,48 +1,81 @@
 .design {
   >.app-bar {
-    >.main {
-      float: left;
-      color: inherit;
-      display: block;
-      cursor: default;
-      font-size: 1rem;
-      height: 3.125rem;
-      position: relative;
-      padding: 0 .625rem;
-      line-height: 3.125rem;
-      background-color: inherit;
+    >.design {
+      display: none;
     }
-    >.identify {
-      @extend .main;
-      padding: unset;
-      >div {
-        color: #6D6D6D;
-        padding: 0 .625rem;
-        display: inline-block;
-        background-color: #EBEBE4;
-      }
-    }
-    >.app-bar-menu>li>ul {
-      border: none;
-      >li>a {
-        padding: .75rem 1.2rem;
-        >span:nth-child(2) {
-          margin: 0 5px;
-        }
-      }
+    >.main>span:nth-child(2)::before {
+      content: 'Design';
     }
   }
   >.content {
-    padding-top: 3.125rem;
-    >.flex-grid>.row>.cell {
-      >.text-light {
-        text-align: center;
-      }
-      >.flex-grid>.row>.cell {
-        min-height: 280px;
-        max-height: 340px;
-        >table {
-          margin: unset;
+    overflow-y: hidden;
+    >.svgContainer {
+      width: 375px;
+      height: 100%;
+      margin: auto;
+      >svg {
+        font-family: 微軟正黑體;
+        width: 100%;
+        height: 100%;
+        .line {
+          fill: none;
+          stroke: #D0CCCB;
+          stroke-width: 5;
+        }
+        g>g {
+          >rect {
+            &.ready {
+              fill: #D0CCCB;
+              stroke: #D5D5D5;
+              stroke-width: 2;
+            }
+            &.running {
+              fill: #FFEBA6;
+              stroke: #E9D891;
+              stroke-width: 2;
+            }
+            &.finished {
+              fill: #93E3B0;
+              stroke: #A5D8B7;
+              stroke-width: 2;
+            }
+            &.error {
+              fill: #F8C4B6;
+              stroke: #F0CFD8;
+              stroke-width: 2;
+            }
+            &.frozen {
+              fill: #9AD6F0;
+              stroke: #84BED7;
+              stroke-width: 2;
+            }
+          }
+          >text {
+            fill: black;
+            font-size: 20px;
+            text-anchor: middle;
+          }
+        }
+        #MS_Surface_Design {
+          transform: translate(0px, 125px);
+        }
+        #MB_Create {
+          transform: translate(200px, 125px);
+        }
+        #MB_Detail {
+          transform: translate(200px, 250px);
+        }
+        #MS_Detail {
+          transform: translate(0px, 250px);
+        }
+        #MB_Total_Asm {
+          transform: translate(0px, 375px);
+        }
+        #MB_Asm_Figure {
+          transform: translate(0px, 500px);
+        }
+        #MB_Com_Figure {
+          transform: translate(0px, 625px);
         }
       }
     }
