@@ -13,43 +13,65 @@
         <g transform="translate(12.5,12.5)">
           <g id="MS_Create">
             <use xlink:href="#arrowVLine" />
-            <rect class="ready" width="150" height="50" rx="10" ry="10" />
+            <rect class="standby" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模型建立</text>
           </g>
           <g id="MS_Surface_Design">
             <use xlink:href="#arrowVLine" />
             <use xlink:href="#arrowHLine" x="150" y="25" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">分模面設計</text>
           </g>
           <g id="MB_Create">
             <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模座建立</text>
           </g>
           <g id="MB_Detail">
             <use xlink:href="#arrowPLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模座細部設計</text>
           </g>
           <g id="MS_Detail">
             <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">機構細部設計</text>
           </g>
           <g id="MB_Total_Asm">
             <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">總組立</text>
           </g>
           <g id="MB_Asm_Figure">
             <use xlink:href="#arrowVLine" />
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">組力圖</text>
           </g>
           <g id="MB_Com_Figure">
-            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">零件圖</text>
+          </g>
+          <g transform="translate(265, 520)">
+            <g transform="translate(5, 5)">
+              <rect class="standby" width="75" height="25" rx="10" ry="10" />
+              <text class="tip" x="37.5" y="17">STANDBY</text>
+            </g>
+            <g transform="translate(5, 35)">
+              <rect class="running" width="75" height="25" rx="10" ry="10" />
+              <text class="tip" x="37.5" y="17">RUNNING</text>
+            </g>
+            <g transform="translate(5, 65)">
+              <rect class="done" width="75" height="25" rx="10" ry="10" />
+              <text class="tip" x="37.5" y="17">DONE</text>
+            </g>
+            <g transform="translate(5, 95)">
+              <rect class="freeze" width="75" height="25" rx="10" ry="10" />
+              <text class="tip" x="37.5" y="17">FREEZE</text>
+            </g>
+            <g transform="translate(5, 125)">
+              <rect class="error" width="75" height="25" rx="10" ry="10" />
+              <text class="tip" x="37.5" y="17">ERROR</text>
+            </g>
           </g>
         </g>
       </svg>

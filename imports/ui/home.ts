@@ -10,12 +10,11 @@ Template['home'].onCreated(() => {
         projects.observe({
             changed(newDoc: any) {
                 const _id = newDoc._id;
-                $(`#${_id} .design`).data('progress').set(0);
+                $(`#${_id} .design .progress`).data('progress').set(newDoc.design.percent);
             },
         });
     });
     $('body').attr('class', 'home');
-    $('#icon').attr('class', 'mif-home');
 });
 
 Template['home'].helpers({
@@ -24,7 +23,7 @@ Template['home'].helpers({
 
 Template['home'].events({
     'click #create'() {
-        console.log(Meteor.call('createProject', { projectNo: 'PJ20161206001' }));
+        Meteor.call('createProject', { projectNo: 'JP20161206001' });
     },
     'click #design'() {
         Meteor.call('updateDesign', { projectNo: 456 });

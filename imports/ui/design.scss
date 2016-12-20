@@ -1,8 +1,6 @@
 .design {
   >.app-bar {
-    >.design {
-      display: none;
-    }
+    background-color: #1ba1e2;
     >.main>span:nth-child(2)::before {
       content: 'Design';
     }
@@ -24,7 +22,7 @@
         }
         g>g {
           >rect {
-            &.ready {
+            &.standby {
               fill: #D0CCCB;
               stroke: #D5D5D5;
               stroke-width: 2;
@@ -34,9 +32,14 @@
               stroke: #E9D891;
               stroke-width: 2;
             }
-            &.finished {
+            &.done {
               fill: #93E3B0;
               stroke: #A5D8B7;
+              stroke-width: 2;
+            }
+            &.freeze {
+              fill: #9AD6F0;
+              stroke: #84BED7;
               stroke-width: 2;
             }
             &.error {
@@ -44,37 +47,35 @@
               stroke: #F0CFD8;
               stroke-width: 2;
             }
-            &.frozen {
-              fill: #9AD6F0;
-              stroke: #84BED7;
-              stroke-width: 2;
-            }
           }
           >text {
             fill: black;
             font-size: 20px;
             text-anchor: middle;
+            &.tip {
+              font-size: 12px;
+            }
           }
         }
-        #MS_Surface_Design {
+        #MS_Surface_Design { // 分模面設計
           transform: translate(0px, 125px);
         }
-        #MB_Create {
+        #MB_Create { // 模座建立
           transform: translate(200px, 125px);
         }
-        #MB_Detail {
+        #MB_Detail { // 模座細部設計
           transform: translate(200px, 250px);
         }
-        #MS_Detail {
+        #MS_Detail { // 機構細部設計
           transform: translate(0px, 250px);
         }
-        #MB_Total_Asm {
+        #MB_Total_Asm { // 總組立
           transform: translate(0px, 375px);
         }
-        #MB_Asm_Figure {
+        #MB_Asm_Figure { // 組力圖
           transform: translate(0px, 500px);
         }
-        #MB_Com_Figure {
+        #MB_Com_Figure { // 零件圖
           transform: translate(0px, 625px);
         }
       }

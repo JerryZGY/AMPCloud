@@ -1,6 +1,7 @@
 .home {
   >.app-bar {
-    >.home {
+    background-color: #0072c6;
+    >.app-bar-element {
       display: none;
     }
     >.main>span:nth-child(2)::before {
@@ -18,6 +19,7 @@
       }
     }
     >table {
+      margin: unset;
       text-align: center;
       user-select: none;
       -moz-user-select: none;
