@@ -5,8 +5,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
-.design > .content > .flex-grid > .row > .cell > .flex-grid > .row > .cell > .img {
+body {
+  .content {
+    width: 100%;
+    height: 100%;
+    padding-top: 3.125rem;
+  }
+  &.design>.content>.flex-grid>.row>.cell>.flex-grid>.row>.cell>.img {
     width: 100%;
     height: 100%;
     min-height: inherit;
@@ -14,4 +19,5 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("Demo.jpg");
+  }
 }
