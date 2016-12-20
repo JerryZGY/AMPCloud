@@ -1,32 +1,22 @@
 <template name="header">
   <div class="app-bar fixed-top">
-    <div class="main">
-      <span id="icon"></span>
-      <span></span>
-    </div>
-    <div class="identify">
-      <div>
-        <span class="mif-versions mif-2x"></span>
-        <span id="identify"></span>
-      </div>
-    </div>
-    <a class="home app-bar-element" href="/">
+    <a class="home app-bar-element {{isActiveRoute 'Home'}}" href="/">
       <span class="mif-home"></span>
       <span>Home</span>
     </a>
-    <a class="design app-bar-element" href="/design">
+    <a class="design app-bar-element {{isActiveRoute 'Design'}}">
       <span class="mif-pencil"></span>
       <span>Design</span>
     </a>
-    <a class="scheduling app-bar-element" href="/scheduling">
+    <a class="scheduling app-bar-element {{isActiveRoute 'Scheduling'}}">
       <span class="mif-indent-increase"></span>
       <span>Scheduling</span>
     </a>
-    <a class="machining app-bar-element" href="/machining">
+    <a class="machining app-bar-element {{isActiveRoute 'Machining'}}">
       <span class="mif-hammer"></span>
       <span>Machining</span>
     </a>
-    <a class="molding app-bar-element" href="/molding">
+    <a class="molding app-bar-element {{isActiveRoute 'Molding'}}">
       <span class="mif-widgets"></span>
       <span>Molding</span>
     </a>
@@ -52,5 +42,11 @@
         </ul>
       </li>
     </ul>
+    <div class="identify place-right {{isNotActiveRoute 'Home' class='active'}}">
+      <div>
+        <span class="mif-versions mif-2x"></span>
+        <span>{{id}}</span>
+      </div>
+    </div>
   </div>
 </template>

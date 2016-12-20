@@ -1,8 +1,8 @@
 body>.app-bar {
-  >.main {
+  >.identify {
     float: left;
+    display: none;
     color: inherit;
-    display: block;
     cursor: default;
     font-size: 1rem;
     height: 3.125rem;
@@ -10,9 +10,6 @@ body>.app-bar {
     padding: 0 .625rem;
     line-height: 3.125rem;
     background-color: inherit;
-  }
-  >.identify {
-    @extend .main;
     padding: unset;
     >div {
       color: #6D6D6D;
@@ -20,6 +17,16 @@ body>.app-bar {
       display: inline-block;
       background-color: #EBEBE4;
     }
+    &.active {
+      display: block;
+    }
+  }
+  >.app-bar-element.active {
+    color: black;
+    display: block;
+    cursor: default;
+    pointer-events: none;
+    background-color: white;
   }
   >.app-bar-menu {
     >li>ul {
