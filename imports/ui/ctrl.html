@@ -56,47 +56,50 @@
           <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
             <path d="M0 1 L0,5 L3,3 z" fill="#D0CCCB" />
           </marker>
-          <line id="arrowLine" x1="75" y1="50" x2="75" y2="108" stroke="#D0CCCB" stroke-width="5" marker-end="url(#arrow)" />
+          <line id="arrowVLine" class="line" x1="75" y1="50" x2="75" y2="108" marker-end="url(#arrow)" />
+          <line id="arrowHLine" class="line" x2="33" marker-end="url(#arrow)" />
+          <polyline id="arrowPLine" class="line" points="75,50 75,85 -125,85" />
         </defs>
         <g transform="translate(12.5,12.5)">
-          <use xlink:href="#arrowLine" />
-          <use xlink:href="#arrowLine" y="125"/>
-          <use xlink:href="#arrowLine" x="200" y="125"/>
-          <use xlink:href="#arrowLine" y="250"/>
-          <use xlink:href="#arrowLine" y="375"/>
-          <use xlink:href="#arrowLine" y="500"/>
-          <use xlink:href="#arrowLine" y="625"/>
           <g id="MS_Create">
-            <rect width="150" height="50" rx="10" ry="10" class="running"/>
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模型建立</text>
+            <use xlink:href="#arrowVLine" />
+            <rect class="ready" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">模型建立</text>
           </g>
           <g id="MS_Surface_Design">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">分模面設計</text>
+            <use xlink:href="#arrowVLine" />
+            <use xlink:href="#arrowHLine" x="150" y="25" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">分模面設計</text>
           </g>
           <g id="MB_Create">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模座建立</text>
+            <use xlink:href="#arrowVLine" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">模座建立</text>
           </g>
           <g id="MB_Detail">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">模座細部設計</text>
+            <use xlink:href="#arrowPLine" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">模座細部設計</text>
           </g>
           <g id="MS_Detail">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">機構細部設計</text>
+            <use xlink:href="#arrowVLine" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">機構細部設計</text>
           </g>
           <g id="MB_Total_Asm">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">總組立</text>
+            <use xlink:href="#arrowVLine" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">總組立</text>
           </g>
           <g id="MB_Asm_Figure">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">組力圖</text>
+            <use xlink:href="#arrowVLine" />
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">組力圖</text>
           </g>
           <g id="MB_Com_Figure">
-            <rect width="150" height="50" rx="10" ry="10" class="frozen" />
-            <text x="75" y="33" text-anchor="middle" font-size="20" fill="black">零件圖</text>
+            <rect class="frozen" width="150" height="50" rx="10" ry="10" />
+            <text x="75" y="33">零件圖</text>
           </g>
         </g>
       </svg>
