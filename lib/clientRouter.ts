@@ -12,9 +12,31 @@ export default class ClientRouter {
             action: () => BlazeLayout.render(route.name),
         }));
     }
+
+    public go(path: string) {
+        FlowRouter.go(path);
+    }
+
+    public get(param: string): string {
+        return FlowRouter.getParam(param);
+    }
+
+    public getContext(func: (current: Context) => void) {
+        Tracker.autorun(() => {
+            FlowRouter.watchPathChange();
+            func(FlowRouter.current());
+        });
+    }
 }
 
 type Route = {
     name: string;
     path: string;
+};
+
+type Context = {
+    path: string;
+    params: any;
+    queryParams: string;
+    route: any;
 };
