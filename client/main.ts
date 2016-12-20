@@ -12,9 +12,12 @@ import '../imports/ui/ctrl';
 import '../imports/ui/design';
 import ClientRouter from '../lib/clientRouter';
 
-const router = new ClientRouter();
-router.initRoutes([
+export const Router = new ClientRouter();
+Router.initRoutes([
     { name: 'home', path: '/' },
     { name: 'ctrl', path: '/ctrl/:id' },
-    { name: 'design', path: '/design' },
+    { name: 'design', path: '/design/:id' },
+    { name: 'scheduling', path: '/scheduling/:id' },
+    { name: 'machining', path: '/machining/:id' },
+    { name: 'molding', path: '/molding/:id' },
 ]);
