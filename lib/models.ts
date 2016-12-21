@@ -1,38 +1,44 @@
 export type Project = {
-    projectNo?: number;
-    createdAt?: Date;
-    designs?: Design[];
+    _id: string;
+    projectNo: string; // 161200011M
+    projectEvent?: string;
+    logs: string[];
+    design?: Design;
+    designHistory?: Design[];
     machinings?: Machining[];
     moldings?: Molding[];
-    logs?: string[];
+    createdAt: Date;
 };
 
 export type Design = {
-    projectNo?: string;
-    projectEvent?: string; // 事件內容
-    orderNo?: string; // 訂單編號
-    moldNo?: string; // 模具編號
-    templateNo?: string; // 模具設計樣板
-    customerNo?: string; // 客戶編號
-    productName?: string; // 品名
-    createdAt?: Date; // 訂單時間
-    endedAt?: Date; // 完工時間
-    data?: string;
-    sentAt: Date; // 更新時間
-    percent: number;
-    states: DesignStates;
+    projectNo?: string;     // 專案編號 (來自ERP並擷取 - 161200011M)
+    projectEvent?: string;  // 事件內容 (Design start|middle|end)
+    data?: string;          // 詳細資料
+    progress?: number;      // 完成進度
+    states?: DesignStates;  // 流程狀態
+    updatedAt: Date;         // 更新時間
+    // ===傳送至子一資料===
+    orderNo?: string;       // 訂單編號 (來自ERP - 2Y004-16120001)
+    templateNo?: string;    // 模具樣板 (暫時固定為 - 1)
+    customerNo?: string;    // 客戶編號 (來自ERP - ABCORP)
+    productName?: string;   // 產品名稱 (來自ERP - 模具)
+    orderDate?: Date;       // 訂單時間 (來自ERP - 2016-12-20)
+    deadlineDate?: Date;    // 完工時間 (來自ERP - 2017-01-16)
+    // ==================
 };
 
 export type DesignStates = {
-    MS_Create: string;          // 模型建立
-    MS_Surface_Design: string;  // 分模面設計
-    MB_Create: string;          // 模座建立
-    MB_Detail: string;     // 模座細部設計
-    MS_Detail: string;     // 機構細部設計
-    MB_Total_Asm: string;     // 總組立
-    MB_Asm_Figure: string;     // 組立圖
-    MB_Com_Figure: string;     // 零件圖
-}
+    MS_Create: StateString;          // 模型建立
+    MS_Surface_Design: StateString;  // 分模面設計
+    MB_Create: StateString;          // 模座建立
+    MB_Detail: StateString;          // 模座細部設計
+    MS_Detail: StateString;          // 機構細部設計
+    MB_Total_Asm: StateString;       // 總組立
+    MB_Asm_Figure: StateString;      // 組立圖
+    MB_Com_Figure: StateString;      // 零件圖
+};
+
+type StateString = 'STANDBY' | 'RUNNING' | 'DONE' | 'FREEZE' | 'ERROR';
 
 export type Machining = {
     projectNo?: string;
