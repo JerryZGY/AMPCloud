@@ -11,20 +11,20 @@
   >td:nth-child(2) {
     padding: unset;
     >.flex-grid>.row>.cell {
-      >.ready {
-        background-color: #D0CCCB;
+      >.standby {
+        background-color: #E8E8E8;
       }
       >.running {
-        background-color: #FFEBA6;
+        background-color: #FFEBA5;
       }
-      >.finished {
+      >.done {
         background-color: #93E3B0;
+      }
+      >.freeze {
+        background-color: #9BD6F0;
       }
       >.error {
         background-color: #F8C4B6;
-      }
-      >.frozen {
-        background-color: #9AD6F0;
       }
       >.status {
         height: 40px;
@@ -32,11 +32,12 @@
       }
       >.progress {
         margin: unset;
+        background-color: white;
         &.pg-running>.bar {
           background-color: #FFC700;
         }
         &.pg-error>.bar {
-          background-color: #EB613C;
+          background-color: #EA613B;
         }
       }
       &:hover {
