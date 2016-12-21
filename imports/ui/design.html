@@ -4,51 +4,52 @@
       <svg viewBox="0 0 375 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
-            <path d="M0 1 L0,5 L3,3 z" fill="#D0CCCB" />
+            <path d="M0 1 L0,5 L3,3 z" fill="#969696" />
           </marker>
           <line id="arrowVLine" class="line" x1="75" y1="50" x2="75" y2="108" marker-end="url(#arrow)" />
           <line id="arrowHLine" class="line" x2="33" marker-end="url(#arrow)" />
           <polyline id="arrowPLine" class="line" points="75,50 75,85 -125,85" />
         </defs>
         <g transform="translate(12.5,12.5)">
+          {{#with design}}
           <g id="MS_Create">
             <use xlink:href="#arrowVLine" />
-            <rect class="standby" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MS_Create}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模型建立</text>
           </g>
           <g id="MS_Surface_Design">
             <use xlink:href="#arrowVLine" />
             <use xlink:href="#arrowHLine" x="150" y="25" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MS_Surface_Design}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">分模面設計</text>
           </g>
           <g id="MB_Create">
             <use xlink:href="#arrowVLine" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MB_Create}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模座建立</text>
           </g>
           <g id="MB_Detail">
             <use xlink:href="#arrowPLine" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MB_Detail}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">模座細部設計</text>
           </g>
           <g id="MS_Detail">
             <use xlink:href="#arrowVLine" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MS_Detail}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">機構細部設計</text>
           </g>
           <g id="MB_Total_Asm">
             <use xlink:href="#arrowVLine" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MB_Total_Asm}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">總組立</text>
           </g>
           <g id="MB_Asm_Figure">
             <use xlink:href="#arrowVLine" />
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MB_Asm_Figure}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">組力圖</text>
           </g>
           <g id="MB_Com_Figure">
-            <rect class="freeze" width="150" height="50" rx="10" ry="10" />
+            <rect class="{{states.MB_Com_Figure}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">零件圖</text>
           </g>
           <g transform="translate(265, 520)">
@@ -73,6 +74,7 @@
               <text class="tip" x="37.5" y="17">ERROR</text>
             </g>
           </g>
+          {{/with}}
         </g>
       </svg>
     </div>

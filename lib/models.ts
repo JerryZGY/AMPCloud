@@ -38,7 +38,7 @@ export type DesignStates = {
     MB_Com_Figure: StateString;      // 零件圖
 };
 
-type StateString = 'STANDBY' | 'RUNNING' | 'DONE' | 'FREEZE' | 'ERROR';
+type StateString = 'standby' | 'running' | 'done' | 'greeze' | 'error';
 
 export type Machining = {
     projectNo?: string;

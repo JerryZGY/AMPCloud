@@ -17,35 +17,35 @@
         height: 100%;
         .line {
           fill: none;
-          stroke: #D0CCCB;
+          stroke: #969696;
           stroke-width: 5;
         }
         g>g {
           >rect {
             &.standby {
-              fill: #D0CCCB;
-              stroke: #D5D5D5;
-              stroke-width: 2;
+              fill: #E8E8E8;
+              stroke: #969696;
+              stroke-width: 1;
             }
             &.running {
-              fill: #FFEBA6;
-              stroke: #E9D891;
-              stroke-width: 2;
+              fill: #FFF2C1;
+              stroke: #EFC737;
+              stroke-width: 1;
             }
             &.done {
-              fill: #93E3B0;
-              stroke: #A5D8B7;
-              stroke-width: 2;
+              fill: #DAFFBA;
+              stroke: #18BF55;
+              stroke-width: 1;
             }
             &.freeze {
-              fill: #9AD6F0;
-              stroke: #84BED7;
-              stroke-width: 2;
+              fill: #C9EEFF;
+              stroke: #35BFFF;
+              stroke-width: 1;
             }
             &.error {
-              fill: #F8C4B6;
-              stroke: #F0CFD8;
-              stroke-width: 2;
+              fill: #FFC4CE;
+              stroke: #FF899D;
+              stroke-width: 1;
             }
           }
           >text {
