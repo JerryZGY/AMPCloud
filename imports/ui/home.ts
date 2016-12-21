@@ -4,17 +4,17 @@ import './project';
 import { Mongo } from 'meteor/mongo';
 import { Projects } from '../../lib/collections';
 
-Template['home'].onCreated(() => {
-    Meteor.subscribe('projects', () => {
-        const projects = Projects.find();
-        projects.observe({
-            changed(newDoc: any) {
-                const _id = newDoc._id;
-                $(`#${_id} .design .progress`).data('progress').set(newDoc.design.percent);
+let changedHandle: Meteor.LiveQueryHandle = null;
+
+Template['home'].onCreated(function () {
+    $('body').attr('class', 'home');
+    this.subscribe('projects', () => {
+        changedHandle = Projects.find().observe({
+            changed(doc: any) {
+                $(`#${doc._id} .design  .progress`).data('progress').set(doc.design.progress);
             },
         });
     });
-    $('body').attr('class', 'home');
 });
 
 Template['home'].helpers({
@@ -28,4 +28,8 @@ Template['home'].events({
     'click #design'() {
         Meteor.call('updateDesign', { projectNo: 456 });
     },
+});
+
+Template['home'].onDestroyed(function () {
+    if (changedHandle) { changedHandle.stop(); }
 });
