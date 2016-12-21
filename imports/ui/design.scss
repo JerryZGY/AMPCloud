@@ -57,6 +57,15 @@
             }
           }
         }
+        .pg-running {
+          fill: #FFC700;
+        }
+        .pg-error {
+          fill: #EA613B;
+        }
+        .pg-space {
+          fill: gray;
+        }
         #MS_Surface_Design { // 分模面設計
           transform: translate(0px, 125px);
         }
