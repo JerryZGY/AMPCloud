@@ -10,7 +10,16 @@ router.initRoutes([
         method: 'POST',
         path: '/receive',
         handler: (req, res) => {
-            logger.info('Data:', req.body);
+            const data = req.body;
+            const isERP = /^ERP/.test(data.projectEvent);
+            const isDesign = /^Design/.test(data.projectEvent);
+            if (isERP) {
+                logger.info('ERP data:', req.body);
+                Meteor.call('createProject', data);
+            } else if (isDesign) {
+                logger.info('Design data:', req.body);
+                Meteor.call('updateDesign', data);
+            }
             res.end('Success');
         },
     },
