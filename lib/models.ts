@@ -15,7 +15,8 @@ export type Design = {
     projectEvent?: string;  // 事件內容 (Design start|middle|end)
     data?: string;          // 詳細資料
     progress?: number;      // 完成進度
-    states?: DesignStates;  // 流程狀態
+    status?: 'running' | 'error';        // 流程狀態
+    subStatus?: SubStatus;  // 子流程狀態
     updatedAt: Date;         // 更新時間
     // ===傳送至子一資料===
     orderNo?: string;       // 訂單編號 (來自ERP - 2Y004-16120001)
@@ -27,7 +28,7 @@ export type Design = {
     // ==================
 };
 
-export type DesignStates = {
+export type SubStatus = {
     MS_Create: StateString;          // 模型建立
     MS_Surface_Design: StateString;  // 分模面設計
     MB_Create: StateString;          // 模座建立
