@@ -6,7 +6,6 @@
     "winston": "registry:dt/winston#0.0.0+20161108133445"
   },
   "dependencies": {
-    "d3": "registry:dt/d3#4.4.0+20161206204056",
     "got": "registry:npm/got#6.3.0+20160524045608"
   }
 }
