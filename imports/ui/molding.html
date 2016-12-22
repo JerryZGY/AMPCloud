@@ -1,0 +1,47 @@
+<template name="molding">
+  <div class="content">
+    <div id="chart"></div>
+    <table class="table border hovered bordered">
+      <thead>
+        <tr>
+          <th>模具編號</th>
+          <th>起始位置</th>
+          <th>冷卻時間</th>
+          <th>鬆退量值</th>
+          <th>背壓壓力</th>
+          <th>一段熔溫</th>
+          <th>二段熔溫</th>
+          <th>一段射速</th>
+          <th>二段射速</th>
+          <th>一段計量</th>
+          <th>二段計量</th>
+          <th>一段保壓</th>
+          <th>二段保壓</th>
+          <th>一段保時</th>
+          <th>二段保時</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each moldings}}
+        <tr>
+          <td>{{moldNo}}</td>
+          <td>{{startPos}}</td>
+          <td>{{coolingTime}}</td>
+          <td>{{suckBackStroke}}</td>
+          <td>{{suckBackPressure}}</td>
+          <td>{{meltTemp.[0]}}</td>
+          <td>{{meltTemp.[1]}}</td>
+          <td>{{injSpeed.[0]}}</td>
+          <td>{{injSpeed.[1]}}</td>
+          <td>{{injStroke.[0]}}</td>
+          <td>{{injStroke.[1]}}</td>
+          <td>{{packingPressure.[0]}}</td>
+          <td>{{packingPressure.[1]}}</td>
+          <td>{{packingTime.[0]}}</td>
+          <td>{{packingTime.[1]}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
