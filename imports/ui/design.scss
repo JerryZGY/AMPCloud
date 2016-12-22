@@ -15,13 +15,25 @@
         font-family: 微軟正黑體;
         width: 100%;
         height: 100%;
+        #chart>path {
+          &.pg-running {
+            fill: #FFC700;
+          }
+          &.pg-error {
+            fill: #EA613B;
+          }
+          &.pg-space {
+            fill: gray;
+          }
+        }
         .line {
           fill: none;
           stroke: #969696;
           stroke-width: 5;
         }
-        g>g {
-          >rect {
+        .mainGroup,
+        .subGroup {
+          >g>rect {
             &.standby {
               fill: #E8E8E8;
               stroke: #969696;
@@ -48,7 +60,7 @@
               stroke-width: 1;
             }
           }
-          >text {
+          >g>text {
             fill: black;
             font-size: 20px;
             text-anchor: middle;
@@ -56,36 +68,6 @@
               font-size: 12px;
             }
           }
-        }
-        .pg-running {
-          fill: #FFC700;
-        }
-        .pg-error {
-          fill: #EA613B;
-        }
-        .pg-space {
-          fill: gray;
-        }
-        #MS_Surface_Design { // 分模面設計
-          transform: translate(0px, 125px);
-        }
-        #MB_Create { // 模座建立
-          transform: translate(200px, 125px);
-        }
-        #MB_Detail { // 模座細部設計
-          transform: translate(200px, 250px);
-        }
-        #MS_Detail { // 機構細部設計
-          transform: translate(0px, 250px);
-        }
-        #MB_Total_Asm { // 總組立
-          transform: translate(0px, 375px);
-        }
-        #MB_Asm_Figure { // 組力圖
-          transform: translate(0px, 500px);
-        }
-        #MB_Com_Figure { // 零件圖
-          transform: translate(0px, 625px);
         }
       }
     }
