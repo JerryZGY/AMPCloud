@@ -10,6 +10,9 @@ import './header';
 import '../imports/ui/home';
 import '../imports/ui/ctrl';
 import '../imports/ui/design';
+import '../imports/ui/scheduling';
+import '../imports/ui/machining';
+import '../imports/ui/molding';
 import ClientRouter from '../lib/clientRouter';
 
 export const Router = new ClientRouter();
