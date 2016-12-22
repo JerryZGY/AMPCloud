@@ -1,6 +1,10 @@
 .design {
   >.app-bar {
     background-color: #1ba1e2;
+    >.app-bar-element:hover,
+    .dropdown-toggle:hover {
+      background-color: #1b6eae;
+    }
     >.main>span:nth-child(2)::before {
       content: 'Design';
     }
