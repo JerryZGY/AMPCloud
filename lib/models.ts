@@ -25,25 +25,28 @@ export interface IStage extends IAMP {
     progress: number;
 }
 export interface IDesign extends IStage {
-    subStatus?: {
-        MS_Create: Status;          // 模型建立
-        MS_Surface_Design: Status;  // 分模面設計
-        MB_Create: Status;          // 模座建立
-        MB_Detail: Status;          // 模座細部設計
-        MS_Detail: Status;          // 機構細部設計
-        MB_Total_Asm: Status;       // 總組立
-        MB_Asm_Figure: Status;      // 組立圖
-        MB_Com_Figure: Status;      // 零件圖
-    };
+    MS_Create: Status;          // 模型建立
+    MS_Surface_Design: Status;  // 分模面設計
+    MB_Create: Status;          // 模座建立
+    MB_Detail: Status;          // 模座細部設計
+    MS_Detail: Status;          // 機構細部設計
+    MB_Total_Asm: Status;       // 總組立
+    MB_Asm_Figure: Status;      // 組立圖
+    MB_Com_Figure: Status;      // 零件圖
 }
 export interface IScheduling extends IStage {
-    moldNo: string;
-    production: string;
-    startDate: Date;
-    endDate: Date;
+    moldNo: string;                 //
+    machineNo: string;
+    method: string;
+    expectedStartTime: Date;
+    expectedEndTime: Date;
 }
 export interface IMachining extends IStage {
+    moldNo: string;
     machineNo: string;
+    method: string;
+    startTime: Date;
+    endTime: Date;
 }
 export interface IMolding extends IStage {
     moldTemp?: number;          // 模具溫度
