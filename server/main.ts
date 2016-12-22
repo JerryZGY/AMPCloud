@@ -13,12 +13,16 @@ router.initRoutes([
             const data = req.body;
             const isERP = /^ERP/.test(data.projectEvent);
             const isDesign = /^Design/.test(data.projectEvent);
+            const isMolding = /^Molding/.test(data.projectEvent);
             if (isERP) {
                 logger.info('ERP data:', req.body);
                 Meteor.call('createProject', data);
             } else if (isDesign) {
                 logger.info('Design data:', req.body);
                 Meteor.call('updateDesign', data);
+            } else if (isMolding) {
+                logger.info('Molding data:', req.body);
+                Meteor.call('updateMolding', data);
             }
             res.end('Success');
         },
