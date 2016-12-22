@@ -12,7 +12,10 @@ Template['home'].onCreated(function () {
     subscribeHandle = this.subscribe('projects', () => {
         changedHandle = Projects.find().observe({
             changed(doc: any) {
-                $(`#${doc._id} .design  .progress`).data('progress').set(doc.design.progress);
+                $(`#${doc._id} .design  .progress`).data('progress').set(doc.designProgress);
+                $(`#${doc._id} .scheduling  .progress`).data('progress').set(doc.schedulingProgress);
+                $(`#${doc._id} .machining  .progress`).data('progress').set(doc.machiningProgress);
+                $(`#${doc._id} .molding  .progress`).data('progress').set(doc.moldingProgress);
             },
         });
     });
