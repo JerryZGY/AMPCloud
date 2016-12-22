@@ -8,7 +8,10 @@ let subscribeHandle: Meteor.SubscriptionHandle = null;
 
 Template['molding'].onCreated(function () {
     $('body').attr('class', 'molding');
-    console.log(c3);
+    subscribeHandle = this.subscribe('moldings');
+});
+
+Template['molding'].onRendered(function () {
     c3.generate({
         bindto: '#chart',
         data: {
@@ -18,7 +21,6 @@ Template['molding'].onCreated(function () {
             ]
         },
     });
-    subscribeHandle = this.subscribe('moldings');
 });
 
 Template['molding'].onDestroyed(function () {
