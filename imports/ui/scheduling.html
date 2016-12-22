@@ -1,0 +1,26 @@
+<template name="scheduling">
+  <div class="content">
+    <table class="table border hovered bordered">
+      <thead>
+        <tr>
+          <th>零件編號</th>
+          <th>製程</th>
+          <th>機台編號</th>
+          <th>預估開始時間</th>
+          <th>預估結束時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each schedulings}}
+        <tr>
+          <td>{{partNo}}</td>
+          <td>{{method}}</td>
+          <td>{{machineNo}}</td>
+          <td>{{expectedStartTime}}</td>
+          <td>{{expectedEndTime}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
