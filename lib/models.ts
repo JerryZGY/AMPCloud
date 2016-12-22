@@ -20,35 +20,46 @@ export interface IProject extends IAMP {
     orderDate: Date;       // 訂單時間 (來自ERP - 2016-12-20)
     deadlineDate: Date;    // 完工時間 (來自ERP - 2017-01-16)
 }
+export interface IProjectView extends IProject {
+    designStatus: Status;
+    designProgress: number;
+    schedulingStatus: Status;
+    schedulingProgress: number;
+    machiningStatus: Status;
+    machiningProgress: number;
+    moldingStatus: Status;
+    moldingProgress: number;
+}
 export interface IStage extends IAMP {
     status: Status;
     progress: number;
 }
 export interface IDesign extends IStage {
-    MS_Create: Status;          // 模型建立
-    MS_Surface_Design: Status;  // 分模面設計
-    MB_Create: Status;          // 模座建立
-    MB_Detail: Status;          // 模座細部設計
-    MS_Detail: Status;          // 機構細部設計
-    MB_Total_Asm: Status;       // 總組立
-    MB_Asm_Figure: Status;      // 組立圖
-    MB_Com_Figure: Status;      // 零件圖
+    MS_Create?: Status;          // 模型建立
+    MS_Surface_Design?: Status;  // 分模面設計
+    MB_Create?: Status;          // 模座建立
+    MB_Detail?: Status;          // 模座細部設計
+    MS_Detail?: Status;          // 機構細部設計
+    MB_Total_Asm?: Status;       // 總組立
+    MB_Asm_Figure?: Status;      // 組立圖
+    MB_Com_Figure?: Status;      // 零件圖
 }
 export interface IScheduling extends IStage {
-    moldNo: string;                 //
-    machineNo: string;
-    method: string;
-    expectedStartTime: Date;
-    expectedEndTime: Date;
+    partNo?: string;             // 零件編號
+    machineNo?: string;
+    method?: string;
+    expectedStartTime?: Date;
+    expectedEndTime?: Date;
 }
 export interface IMachining extends IStage {
-    moldNo: string;
-    machineNo: string;
-    method: string;
-    startTime: Date;
-    endTime: Date;
+    partNo?: string;
+    machineNo?: string;
+    method?: string;
+    startTime?: Date;
+    endTime?: Date;
 }
 export interface IMolding extends IStage {
+    moldNo?: string;            // 模具編號
     moldTemp?: number;          // 模具溫度
     startPos?: number;          // 起始位置
     coolingTime?: number;       // 冷卻時間
