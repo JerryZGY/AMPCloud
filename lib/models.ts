@@ -5,10 +5,10 @@ export type Project = {
     logs: string[];
     design?: Design;
     designHistory?: Design[];
-    machinings?: Machining;
-    machiningsHistory?: Machining[];
-    moldings?: Molding;
-    moldingsHistory?: Molding[];
+    machining?: Machining;
+    machiningHistory?: Machining[];
+    molding?: Molding;
+    moldingHistory?: Molding[];
     createdAt: Date;
 };
 
