@@ -5,16 +5,22 @@ import { Mongo } from 'meteor/mongo';
 import { Projects } from '../../lib/collections';
 
 let changedHandle: Meteor.LiveQueryHandle = null;
+let subscribeHandle: Meteor.SubscriptionHandle = null;
 
 Template['home'].onCreated(function () {
     $('body').attr('class', 'home');
-    this.subscribe('projects', () => {
+    subscribeHandle = this.subscribe('projects', () => {
         changedHandle = Projects.find().observe({
             changed(doc: any) {
                 $(`#${doc._id} .design  .progress`).data('progress').set(doc.design.progress);
             },
         });
     });
+});
+
+Template['home'].onDestroyed(function () {
+    if (changedHandle) { changedHandle.stop(); }
+    if (subscribeHandle) { subscribeHandle.stop(); }
 });
 
 Template['home'].helpers({
@@ -28,8 +34,4 @@ Template['home'].events({
     'click #design'() {
         Meteor.call('updateDesign', { projectNo: 456 });
     },
-});
-
-Template['home'].onDestroyed(function () {
-    if (changedHandle) { changedHandle.stop(); }
 });
