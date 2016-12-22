@@ -5,20 +5,20 @@
       <div class="flex-grid">
         <div class="row">
           <div class="cell size3 design">
-            <div class="status running">設計</div>
-            <div class="progress pg-running" data-value={{design.progress}} data-animate="500" data-role="progress"></div>
+            <div class="status {{designStatus}}">設計</div>
+            <div class="progress pg-{{pgDesignStatus}}" data-value={{designProgress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 scheduling">
-            <div class="status standby">排程與規劃</div>
-            <div class="progress pg-error" data-animate="500" data-role="progress"></div>
+            <div class="status {{schedulingStatus}}">排程與規劃</div>
+            <div class="progress pg-{{pgSchedulingStatus}}" data-value={{schedulingProgress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 machining">
-            <div class="status standby">加工與量測</div>
-            <div class="progress" data-animate="500" data-role="progress"></div>
+            <div class="status {{machiningStatus}}">加工與量測</div>
+            <div class="progress pg-{{pgMachiningStatus}}" data-value={{machiningProgress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 molding">
-            <div class="status standby">成型</div>
-            <div class="progress" data-animate="500" data-role="progress"></div>
+            <div class="status {{moldingStatus}}">成型</div>
+            <div class="progress pg-{{pgMoldingStatus}}" data-value={{moldingProgress}} data-animate="500" data-role="progress"></div>
           </div>
         </div>
       </div>

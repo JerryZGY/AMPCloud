@@ -39,6 +39,9 @@
         &.pg-error>.bar {
           background-color: #EA613B;
         }
+        &.pg-space>.bar {
+          background-color: unset;
+        }
       }
       &:hover {
         opacity: 0.8;
