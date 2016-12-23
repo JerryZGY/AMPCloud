@@ -24,6 +24,7 @@ Template['design'].onRendered(function () {
 });
 
 Template['design'].onDestroyed(function () {
+    progressRing = null;
     if (autorunHandle) { autorunHandle.stop(); }
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
