@@ -1,24 +1,24 @@
 <template name="project">
-  <tr id="{{_id}}" class="project">
+  <tr class="project">
     <td class="ctrl">{{_id}}</td>
     <td>
       <div class="flex-grid">
         <div class="row">
           <div class="cell size3 design">
-            <div class="status {{designStatus}}">設計</div>
-            <div class="progress pg-{{pgDesignStatus}}" data-value={{designProgress}} data-animate="500" data-role="progress"></div>
+            <div class="status {{design.status}}">設計</div>
+            <div class="progress pg-{{parseStatus design.status}}" data-value={{design.progress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 scheduling">
-            <div class="status {{schedulingStatus}}">排程與規劃</div>
-            <div class="progress pg-{{pgSchedulingStatus}}" data-value={{schedulingProgress}} data-animate="500" data-role="progress"></div>
+            <div class="status {{scheduling.status}}">排程與規劃</div>
+            <div class="progress pg-{{parseStatus scheduling.status}}" data-value={{scheduling.progress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 machining">
-            <div class="status {{machiningStatus}}">加工與量測</div>
-            <div class="progress pg-{{pgMachiningStatus}}" data-value={{machiningProgress}} data-animate="500" data-role="progress"></div>
+            <div class="status {{machining.status}}">加工與量測</div>
+            <div class="progress pg-{{parseStatus machining.status}}" data-value={{scheduling.progress}} data-animate="500" data-role="progress"></div>
           </div>
           <div class="cell size3 molding">
-            <div class="status {{moldingStatus}}">成型</div>
-            <div class="progress pg-{{pgMoldingStatus}}" data-value={{moldingProgress}} data-animate="500" data-role="progress"></div>
+            <div class="status {{molding.status}}">成型</div>
+            <div class="progress pg-{{parseStatus molding.status}}" data-value={{molding.progress}} data-animate="500" data-role="progress"></div>
           </div>
         </div>
       </div>
