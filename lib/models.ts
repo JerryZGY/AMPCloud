@@ -60,7 +60,6 @@ export interface IMachining extends IStage {
     error?: string;
 }
 export interface IMolding extends IStage {
-    moldNo?: string;            // 模具編號
     moldTemp?: number;          // 模具溫度
     startPos?: number;          // 起始位置
     coolingTime?: number;       // 冷卻時間
