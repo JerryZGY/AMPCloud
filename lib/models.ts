@@ -57,6 +57,7 @@ export interface IMachining extends IStage {
     method?: string;
     startTime?: Date;
     endTime?: Date;
+    error?: string;
 }
 export interface IMolding extends IStage {
     moldNo?: string;            // 模具編號
