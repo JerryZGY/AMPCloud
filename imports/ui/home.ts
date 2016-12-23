@@ -4,25 +4,13 @@ import './project';
 import { Mongo } from 'meteor/mongo';
 import { Projects } from '../../lib/collections';
 
-let changedHandle: Meteor.LiveQueryHandle = null;
 let subscribeHandle: Meteor.SubscriptionHandle = null;
-
 Template['home'].onCreated(function () {
     $('body').attr('class', 'home');
-    subscribeHandle = this.subscribe('projects', () => {
-        changedHandle = Projects.find().observe({
-            changed(doc: any) {
-                $(`#${doc._id} .design  .progress`).data('progress').set(doc.designProgress);
-                $(`#${doc._id} .scheduling  .progress`).data('progress').set(doc.schedulingProgress);
-                $(`#${doc._id} .machining  .progress`).data('progress').set(doc.machiningProgress);
-                $(`#${doc._id} .molding  .progress`).data('progress').set(doc.moldingProgress);
-            },
-        });
-    });
+    subscribeHandle = this.subscribe('projects');
 });
 
 Template['home'].onDestroyed(function () {
-    if (changedHandle) { changedHandle.stop(); }
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
 
