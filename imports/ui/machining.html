@@ -6,19 +6,25 @@
           <th>零件編號</th>
           <th>製程</th>
           <th>機台編號</th>
+          <th>預估開始時間</th>
+          <th>預估結束時間</th>
           <th>開始時間</th>
           <th>結束時間</th>
-          <th>錯誤狀況</th>
+          <th>零件狀態</th>
+          <th>錯誤訊息</th>
         </tr>
       </thead>
       <tbody>
-        {{#each machinings}}
+        {{#each schedulings}}
         <tr>
           <td>{{partNo}}</td>
           <td>{{method}}</td>
           <td>{{machineNo}}</td>
+          <td>{{expectedStartTime}}</td>
+          <td>{{expectedEndTime}}</td>
           <td>{{startTime}}</td>
           <td>{{endTime}}</td>
+          <td>{{status}}</td>
           <td>{{error}}</td>
         </tr>
         {{/each}}
