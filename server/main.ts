@@ -11,15 +11,25 @@ router.initRoutes([
         path: '/receive',
         handler: (req, res) => {
             const data = req.body;
-            const isERP = /^ERP/.test(data.projectEvent);
-            const isDesign = /^Design/.test(data.projectEvent);
-            const isMolding = /^Molding/.test(data.projectEvent);
+            console.log('receive:', data);
+            const projectEvent = data.length ? data[0].projectEvent : data.projectEvent;
+            const isERP = /^ERP/.test(projectEvent);
+            const isDesign = /^Design/.test(projectEvent);
+            const isScheduling = /^Scheduling/.test(projectEvent);
+            const isMachining = /^Machining/.test(projectEvent);
+            const isMolding = /^Molding/.test(projectEvent);
             if (isERP) {
                 logger.info('ERP data:', req.body);
                 Meteor.call('createProject', data);
             } else if (isDesign) {
                 logger.info('Design data:', req.body);
                 Meteor.call('updateDesign', data);
+            } else if (isScheduling) {
+                logger.info('Scheduling data:', req.body);
+                Meteor.call('updateScheduling', data);
+            } else if (isMachining) {
+                logger.info('Machining data:', req.body);
+                Meteor.call('updateMachining', data);
             } else if (isMolding) {
                 logger.info('Molding data:', req.body);
                 Meteor.call('updateMolding', data);
