@@ -45,7 +45,16 @@ Meteor.methods({
         if (startTime) { datum.startTime = startTime; }
         const endTime = data.endTime;
         if (endTime) { datum.endTime = endTime; }
-        if (datum.error.length && data.error) { datum.error.push(data.error); }
+        const status = data.status;
+        if (status) { datum.status = status; }
+        const error = data.error;
+        if (error) {
+            if (datum.error) {
+                datum.error.push(error);
+            } else {
+                datum.error = [error];
+            }
+        }
         insertLog(data);
         Schedulings.update(selector, datum);
     },
