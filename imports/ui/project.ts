@@ -24,7 +24,7 @@ Template['project'].helpers({
     scheduling: () => getDataAndRenderProgressBar('scheduling', Schedulings),
     machining: () => getDataAndRenderProgressBar('machining', Machinings),
     molding: () => getDataAndRenderProgressBar('molding', Moldings),
-    parseStatus: status => status === 'running' || status === 'error' ? status : 'space',
+    parseStatus: status => status === 'running' || status === 'done' || status === 'error' ? status : 'space',
 });
 
 function getDataAndRenderProgressBar(name: string, collection: Mongo.Collection<Models.IStage>) {
