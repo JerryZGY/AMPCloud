@@ -1,7 +1,7 @@
 .ctrl {
   >.app-bar {
-    >.identify, >.design {
-      display: none;
+    >.identify {
+      display: none !important;
     }
   }
   >.content {
