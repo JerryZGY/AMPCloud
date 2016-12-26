@@ -8,6 +8,7 @@
           <th>機台編號</th>
           <th>預估開始時間</th>
           <th>預估結束時間</th>
+          <th>檔案連結</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,7 @@
           <td>{{machineNo}}</td>
           <td>{{expectedStartTime}}</td>
           <td>{{expectedEndTime}}</td>
+          <td><a class="mif-file-download mif-2x" href="{{fileUrl}}"></a></td>
         </tr>
         {{/each}}
       </tbody>
