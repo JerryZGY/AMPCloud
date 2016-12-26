@@ -13,51 +13,41 @@ export interface IAMP extends ICollection {
     receivedAt: Date;
 }
 export interface IProject extends IAMP {
-    orderNo: string;       // 訂單編號 (來自ERP - 2Y004-16120001)
-    templateNo: string;    // 模具樣板 (暫時固定為 - 1)
-    customerNo: string;    // 客戶編號 (來自ERP - ABCORP)
-    productName: string;   // 產品名稱 (來自ERP - 模具)
-    orderDate: Date;       // 訂單時間 (來自ERP - 2016-12-20)
-    deadlineDate: Date;    // 完工時間 (來自ERP - 2017-01-16)
-}
-export interface IProjectView extends IProject {
-    designStatus: Status;
-    designProgress: number;
-    schedulingStatus: Status;
-    schedulingProgress: number;
-    machiningStatus: Status;
-    machiningProgress: number;
-    moldingStatus: Status;
-    moldingProgress: number;
+    orderNo: string;            // 訂單編號 (來自ERP - 2Y004-16120001)
+    templateNo: string;         // 模具樣板 (暫時固定為 - 1)
+    customerNo: string;         // 客戶編號 (來自ERP - ABCORP)
+    productName: string;        // 產品名稱 (來自ERP - 模具)
+    orderDate: Date;            // 訂單時間 (來自ERP - 2016-12-20)
+    deadlineDate: Date;         // 完工時間 (來自ERP - 2017-01-16)
 }
 export interface IStage extends IAMP {
-    status: Status;
-    progress: number;
+    status: Status;             // 處理狀況
+    progress: number;           // 處理進度
 }
 export interface IDesign extends IStage {
-    MS_Create?: Status;          // 模型建立
-    MS_Surface_Design?: Status;  // 分模面設計
-    MB_Create?: Status;          // 模座建立
-    MB_Detail?: Status;          // 模座細部設計
-    MS_Detail?: Status;          // 機構細部設計
-    MB_Total_Asm?: Status;       // 總組立
-    MB_Asm_Figure?: Status;      // 組立圖
-    MB_Com_Figure?: Status;      // 零件圖
+    MS_Create?: Status;         // 模型建立
+    MS_Surface_Design?: Status; // 分模面設計
+    MB_Create?: Status;         // 模座建立
+    MB_Detail?: Status;         // 模座細部設計
+    MS_Detail?: Status;         // 機構細部設計
+    MB_Total_Asm?: Status;      // 總組立
+    MB_Asm_Figure?: Status;     // 組立圖
+    MB_Com_Figure?: Status;     // 零件圖
 }
 export interface IScheduling extends IStage {
-    partNo?: string;             // 零件編號
-    machineNo?: string;
-    method?: string;
-    expectedStartTime?: Date;
-    expectedEndTime?: Date;
+    partNo?: string;            // 零件編號
+    machineNo?: string;         // 機台編號
+    method?: string;            // 製程名稱
+    expectedStartTime?: Date;   // 預估開始時間
+    expectedEndTime?: Date;     // 預估結束時間
 }
 export interface IMachining extends IStage {
-    partNo?: string;
-    machineNo?: string;
-    method?: string;
-    startTime?: Date;
-    endTime?: Date;
-    error?: string;
+    partNo?: string;            // 零件編號
+    machineNo?: string;         // 機台編號
+    method?: string;            // 製程名稱
+    startTime?: Date;           // 開始時間
+    endTime?: Date;             // 結束時間
+    error?: string;             // 錯誤資訊
 }
 export interface IMolding extends IStage {
     moldTemp?: number;          // 模具溫度
