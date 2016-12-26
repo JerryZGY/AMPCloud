@@ -1,13 +1,13 @@
 import './machining.html';
 import './machining.scss';
-import { Machinings } from '../../lib/collections';
+import { Schedulings } from '../../lib/collections';
 import { Router } from '../../client/main';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 
 Template['machining'].onCreated(function () {
     $('body').attr('class', 'machining');
-    subscribeHandle = this.subscribe('machinings');
+    subscribeHandle = this.subscribe('schedulings');
 });
 
 Template['machining'].onDestroyed(function () {
@@ -15,5 +15,5 @@ Template['machining'].onDestroyed(function () {
 });
 
 Template['machining'].helpers({
-    machinings: () => Machinings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
+    schedulings: () => Schedulings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
 });

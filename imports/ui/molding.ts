@@ -42,7 +42,6 @@ function renderChart(moldings: Models.IMolding[]) {
         meltTemp2.push(molding.meltTemp[1]);
     });
     if (!chart) {
-        console.log('init');
         chart = c3.generate({
             bindto: '#chart',
             data: {
@@ -53,7 +52,6 @@ function renderChart(moldings: Models.IMolding[]) {
             },
         });
     } else {
-        console.log('load');
         chart.load({
             columns: [
                 ['一段熔溫', ...meltTemp1],

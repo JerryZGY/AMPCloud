@@ -13,7 +13,8 @@ export interface IAMP extends ICollection {
     receivedAt: Date;
 }
 export interface IProject extends IAMP {
-    orderNo: string;            // 訂單編號 (來自ERP - 2Y004-16120001)
+    moldNo: string;             // 模具編號
+    spec: string;               // 規格描述
     templateNo: string;         // 模具樣板 (暫時固定為 - 1)
     customerNo: string;         // 客戶編號 (來自ERP - ABCORP)
     productName: string;        // 產品名稱 (來自ERP - 模具)
@@ -40,14 +41,9 @@ export interface IScheduling extends IStage {
     method?: string;            // 製程名稱
     expectedStartTime?: Date;   // 預估開始時間
     expectedEndTime?: Date;     // 預估結束時間
-}
-export interface IMachining extends IStage {
-    partNo?: string;            // 零件編號
-    machineNo?: string;         // 機台編號
-    method?: string;            // 製程名稱
     startTime?: Date;           // 開始時間
     endTime?: Date;             // 結束時間
-    error?: string;             // 錯誤資訊
+    error?: any[];              // 錯誤資訊
 }
 export interface IMolding extends IStage {
     moldTemp?: number;          // 模具溫度
