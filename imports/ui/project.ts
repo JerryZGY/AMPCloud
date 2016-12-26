@@ -43,7 +43,7 @@ function renderScheduling() {
 function renderMachining() {
     const data = Schedulings.find({ projectNo: Template.currentData()._id }).fetch();
     const isRunning = !!data.filter(machining => machining.startTime).length;
-    const isDone = data.filter(machining => machining.endTime).length === data.length;
+    const isDone = data.filter(machining => machining.endTime).length === data.length && data.length !== 0;
     return { status: isDone ? 'done' : isRunning ? 'running' : 'standby', progress: renderProgress('machining', isDone) };
 }
 
