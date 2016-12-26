@@ -36,6 +36,9 @@
         &.pg-running>.bar {
           background-color: #FFC700;
         }
+        &.pg-done>.bar {
+          background-color: #18BF55;
+        }
         &.pg-error>.bar {
           background-color: #EA613B;
         }
