@@ -3,14 +3,13 @@ import './project.scss';
 import { Mongo } from 'meteor/mongo';
 import { Router } from '../../client/main';
 import * as Models from '../../lib/models';
-import { Designs, Schedulings, Machinings, Moldings } from '../../lib/collections';
+import { Designs, Schedulings, Moldings } from '../../lib/collections';
 
 let subscribeHandles: Meteor.SubscriptionHandle[] = [];
 Template['project'].onCreated(function () {
     subscribeHandles = [
         this.subscribe('designs'),
         this.subscribe('schedulings'),
-        this.subscribe('machinings'),
         this.subscribe('moldings'),
     ];
 });
@@ -21,8 +20,8 @@ Template['project'].onDestroyed(function () {
 
 Template['project'].helpers({
     design: () => getDataAndRenderProgressBar('design', Designs),
-    scheduling: () => getDataAndRenderProgressBar('scheduling', Schedulings),
-    machining: () => getDataAndRenderProgressBar('machining', Machinings),
+    scheduling: () => renderScheduling(),
+    machining: () => renderMachining(),
     molding: () => getDataAndRenderProgressBar('molding', Moldings),
     parseStatus: status => status === 'running' || status === 'done' || status === 'error' ? status : 'space',
 });
@@ -34,6 +33,25 @@ function getDataAndRenderProgressBar(name: string, collection: Mongo.Collection<
     const templateInstance: any = Template.instance();
     if (templateInstance.view.isRendered) { templateInstance.$(`.${name} .progress`).data('progress').set(data.progress); }
     return data;
+}
+
+function renderScheduling() {
+    const isDone = !!Schedulings.find({ projectNo: Template.currentData()._id }).count();
+    return { status: isDone ? 'done' : 'standby', progress: renderProgress('scheduling', isDone) };
+}
+
+function renderMachining() {
+    const data = Schedulings.find({ projectNo: Template.currentData()._id }).fetch();
+    const isRunning = !!data.filter(machining => machining.startTime).length;
+    const isDone = data.filter(machining => machining.endTime).length === data.length;
+    return { status: isDone ? 'done' : isRunning ? 'running' : 'standby', progress: renderProgress('machining', isDone) };
+}
+
+function renderProgress(name: string, isDone: boolean) {
+    const progress = isDone ? 100 : 0;
+    const templateInstance: any = Template.instance();
+    if (templateInstance.view.isRendered) { templateInstance.$(`.${name} .progress`).data('progress').set(progress); }
+    return progress;
 }
 
 Template['project'].events({
