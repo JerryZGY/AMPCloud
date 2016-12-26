@@ -37,6 +37,9 @@ Template['molding'].helpers({
 function renderChart(moldings: Models.IMolding[]) {
     let meltTemp1 = [];
     let meltTemp2 = [];
+    let meltTemp3 = [];
+    let meltTemp4 = [];
+    let meltTemp5 = [];
     moldings.forEach((molding: Models.IMolding) => {
         meltTemp1.push(molding.meltTemp[0]);
         meltTemp2.push(molding.meltTemp[1]);
@@ -48,6 +51,9 @@ function renderChart(moldings: Models.IMolding[]) {
                 columns: [
                     ['一段熔溫', ...meltTemp1],
                     ['二段熔溫', ...meltTemp2],
+                    ['三段熔溫', ...meltTemp3],
+                    ['四段熔溫', ...meltTemp4],
+                    ['五段熔溫', ...meltTemp5],
                 ]
             },
         });
@@ -56,6 +62,9 @@ function renderChart(moldings: Models.IMolding[]) {
             columns: [
                 ['一段熔溫', ...meltTemp1],
                 ['二段熔溫', ...meltTemp2],
+                ['三段熔溫', ...meltTemp3],
+                ['四段熔溫', ...meltTemp4],
+                ['五段熔溫', ...meltTemp5],
             ]
         });
     }
