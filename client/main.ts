@@ -20,8 +20,12 @@ export const Router = new ClientRouter();
 Router.initRoutes([
     { name: 'home', path: '/' },
     { name: 'ctrl', path: '/ctrl/:id' },
+    { name: 'ctrl', path: '/design/all' },
     { name: 'design', path: '/design/:id' },
+    { name: 'ctrl', path: '/scheduling/all' },
     { name: 'scheduling', path: '/scheduling/:id' },
+    { name: 'ctrl', path: '/machining/all' },
     { name: 'machining', path: '/machining/:id' },
+    { name: 'ctrl', path: '/molding/all' },
     { name: 'molding', path: '/molding/:id' },
 ]);
