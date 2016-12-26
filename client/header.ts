@@ -5,7 +5,7 @@ import { Router } from './main';
 let id;
 Template['header'].onCreated(() => {
     Router.getContext((current) => {
-        id = current.params.id;
+        id = current.params.id || 'all';
     });
 });
 
@@ -14,6 +14,9 @@ Template['header'].helpers({
 });
 
 Template['header'].events({
+    'click .app-bar>.home'() {
+        Router.go(`/`);
+    },
     'click .app-bar>.design'() {
         Router.go(`/design/${id}`);
     },
