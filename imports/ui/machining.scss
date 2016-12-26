@@ -23,6 +23,17 @@
           text-align: center;
         }
       }
+      .status {
+        &.running {
+          color: #FFC700;
+        }
+        &.done {
+          color: #18BF55;
+        }
+        &.error {
+          color: #EA613B;
+        }
+      }
     }
   }
 }
