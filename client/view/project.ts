@@ -3,13 +3,13 @@ import './project.scss';
 import { Mongo } from 'meteor/mongo';
 import { Router } from '../main';
 import * as Models from '../../lib/models';
-import { Designs, Schedulings, Moldings } from '../../lib/collections';
+import { Designs, Parts, Moldings } from '../../lib/collections';
 
 let subscribeHandles: Meteor.SubscriptionHandle[] = [];
 Template['project'].onCreated(function () {
     subscribeHandles = [
         this.subscribe('designs'),
-        this.subscribe('schedulings'),
+        this.subscribe('parts'),
         this.subscribe('moldings'),
     ];
 });
@@ -36,12 +36,12 @@ function getDataAndRenderProgressBar(name: string, collection: Mongo.Collection<
 }
 
 function renderScheduling() {
-    const isDone = !!Schedulings.find({ projectNo: Template.currentData()._id }).count();
+    const isDone = !!Parts.find({ projectNo: Template.currentData()._id }).count();
     return { status: isDone ? 'done' : 'standby', progress: renderProgress('scheduling', isDone) };
 }
 
 function renderMachining() {
-    const data = Schedulings.find({ projectNo: Template.currentData()._id }).fetch();
+    const data = Parts.find({ projectNo: Template.currentData()._id }).fetch();
     const isRunning = !!data.filter(machining => machining.startTime).length;
     const isDone = data.filter(machining => machining.endTime).length === data.length && data.length !== 0;
     return { status: isDone ? 'done' : isRunning ? 'running' : 'standby', progress: renderProgress('machining', isDone) };

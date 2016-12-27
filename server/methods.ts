@@ -1,7 +1,6 @@
 import * as got from 'got';
-import { Projects, Logs, Designs, Schedulings, Moldings } from '../lib/collections';
 import * as Models from '../lib/models';
-
+import { Projects, Logs, Designs, Parts, Moldings } from '../lib/collections';
 Meteor.methods({
     'createProject'(data: Models.IProject) {
         const _id = data.projectNo;
@@ -10,53 +9,52 @@ Meteor.methods({
         Meteor.call('notifyDesign', _id);
     },
     async 'notifyDesign'(_id: string) {
-        console.log('notify');
-        const data = Projects.findOne({ _id });
+        const src = Projects.findOne({ _id });
+        const data: Models.IDesignPost = {
+            projectNo: src.projectNo,
+            moldNo: src.moldNo,
+            templateNo: src.templateNo,
+            customerNo: src.customerNo,
+            productName: src.productName,
+            orderDate: src.orderDate,
+            deadlineDate: src.deadlineDate,
+            receivedAt: src.receivedAt,
+        };
         const url = 'http://140.135.96.39/icmold/AMPWebService2.asmx/InsertProjInfo';
-        // const url = 'http://localhost:8888';
-        delete data._id;
-        delete data.spec;
-        let response;
-        try {
-            response = await postToWebService(url, data);
-            console.log('response', response);
-        } catch (error) {
-            response = error;
-            console.log('error', response);
-        }
-        Logs.insert({ projectNo: _id, message: `Notify design: ${response}`, receivedAt: new Date() });
+        await postToWebService(url, data);
+        Logs.insert({ projectNo: _id, message: `Notify design`, receivedAt: new Date() });
     },
     'updateDesign'(data: Models.IDesign) {
         insertLog(data);
         Designs.insert(data);
     },
-    'updateScheduling'(data: Models.IScheduling[]) {
-        data.forEach(datum => {
-            const selector = { projectNo: datum.projectNo, partNo: datum.partNo };
-            const scheduling = Schedulings.findOne(selector) || datum;
-            insertLog(scheduling);
-            Schedulings.upsert(selector, scheduling);
+    'updateScheduling'(data: Models.IPart[]) {
+        data.forEach(part => {
+            const selector = { projectNo: part.projectNo, partNo: part.partNo };
+            const parts = Parts.findOne(selector) || part;
+            insertLog(parts);
+            Parts.upsert(selector, parts);
         });
     },
-    'updateMachining'(data: Models.IScheduling) {
+    'updateMachining'(data: Models.IPart) {
         const selector = { projectNo: data.projectNo, partNo: data.partNo };
-        const datum = Schedulings.findOne(selector);
+        const part = Parts.findOne(selector);
         const startTime = data.startTime;
-        if (startTime) { datum.startTime = startTime; }
+        if (startTime) { part.startTime = startTime; }
         const endTime = data.endTime;
-        if (endTime) { datum.endTime = endTime; }
+        if (endTime) { part.endTime = endTime; }
         const status = data.status;
-        if (status) { datum.status = status; }
+        if (status) { part.status = status; }
         const error = data.error;
         if (error) {
-            if (datum.error) {
-                datum.error.push(error);
+            if (part.error) {
+                part.error.push.apply(null, error);
             } else {
-                datum.error = [error];
+                part.error = error;
             }
         }
         insertLog(data);
-        Schedulings.update(selector, datum);
+        Parts.update(selector, part);
     },
     'updateMolding'(data: Models.IMolding) {
         insertLog(data);

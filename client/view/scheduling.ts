@@ -1,13 +1,13 @@
 import './scheduling.html';
 import './scheduling.scss';
 import { Router } from '../main';
-import { Schedulings } from '../../lib/collections';
+import { Parts } from '../../lib/collections';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 
 Template['scheduling'].onCreated(function () {
     $('body').attr('class', 'scheduling');
-    subscribeHandle = this.subscribe('schedulings');
+    subscribeHandle = this.subscribe('parts');
 });
 
 Template['scheduling'].onDestroyed(function () {
@@ -15,5 +15,5 @@ Template['scheduling'].onDestroyed(function () {
 });
 
 Template['scheduling'].helpers({
-    schedulings: () => Schedulings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
+    parts: () => Parts.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
 });
