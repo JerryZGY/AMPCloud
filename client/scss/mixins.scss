@@ -8,6 +8,10 @@
 @mixin progress($color) {
   fill: $color;
   background-color: $color;
+  &.icon {
+    color: $color;
+    background-color: unset;
+  }
   >.bar {
     background-color: $color;
   }
