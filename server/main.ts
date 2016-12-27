@@ -2,9 +2,17 @@ import './methods';
 import './publications';
 import * as winston from 'winston';
 import ServerRouter from '../lib/serverRouter';
+import { WebApp } from 'meteor/webapp';
 
 const logger = new winston.Logger({ transports: [new winston.transports.Console()] });
 const router = new ServerRouter();
+
+// Listen to incoming HTTP requests, can only be used on the server
+WebApp.rawConnectHandlers.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  return next();
+});
+
 router.initRoutes([
     {
         method: 'POST',
