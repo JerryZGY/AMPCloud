@@ -1,9 +1,9 @@
 import './project.html';
 import './project.scss';
 import { Mongo } from 'meteor/mongo';
-import { Router } from '../../client/main';
-import * as Models from '../../lib/models';
-import { Designs, Schedulings, Moldings } from '../../lib/collections';
+import { Router } from './main';
+import * as Models from '../lib/models';
+import { Designs, Schedulings, Moldings } from '../lib/collections';
 
 let subscribeHandles: Meteor.SubscriptionHandle[] = [];
 Template['project'].onCreated(function () {

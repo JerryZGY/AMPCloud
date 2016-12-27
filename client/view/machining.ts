@@ -17,3 +17,15 @@ Template['machining'].onDestroyed(function () {
 Template['machining'].helpers({
     schedulings: () => Schedulings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
 });
+
+Template['machining'].events({
+    'click .error'(e, tmpl) {
+        // console.log('e', this);
+        // console.log('target', e.currentTarget);
+        showDialog();
+    },
+});
+
+function showDialog() {
+    $('#dialog').data('dialog').open();
+}

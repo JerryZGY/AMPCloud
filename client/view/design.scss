@@ -1,14 +1,6 @@
+@import '../../client/lib/scss/common';
 .design {
-  >.app-bar {
-    background-color: #1ba1e2;
-    >.app-bar-element:hover,
-    .dropdown-toggle:hover {
-      background-color: #1b6eae;
-    }
-    >.main>span:nth-child(2)::before {
-      content: 'Design';
-    }
-  }
+  @include app-bar($design, $design-hover);
   >.content {
     overflow-y: hidden;
     >.svgContainer {
@@ -22,6 +14,9 @@
         #chart>path {
           &.pg-running {
             fill: #FFC700;
+          }
+          &.pg-done {
+            fill: #18BF55;
           }
           &.pg-error {
             fill: #EA613B;
@@ -37,6 +32,9 @@
         }
         .mainGroup,
         .subGroup {
+          .percent {
+            font-size: 17px;
+          }
           >g>rect {
             &.standby {
               fill: #E8E8E8;

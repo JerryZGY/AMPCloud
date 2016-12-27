@@ -1,0 +1,7 @@
+@import '../../client/lib/scss/common';
+.home {
+  @include table();
+  .identify {
+    width: 20%;
+  }
+}

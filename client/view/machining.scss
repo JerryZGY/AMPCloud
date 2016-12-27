@@ -36,4 +36,20 @@
       }
     }
   }
+  #dialog {
+    padding: 25px;
+  }
+  .thead {
+    background-color: #0094D5;
+    >th {
+      color: white;
+      text-align: center;
+    }
+  }
+  .tbody {
+    background-color: white;
+    >td {
+      color: black;
+    }
+  }
 }
