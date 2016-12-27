@@ -1,57 +1,22 @@
 <template name="ctrl">
   <div class="content">
-    <div class="flex-grid">
-      <div class="row">
-        <div class="cell auto-size padding20">
-          <h1 class="text-light">Virtual machines</h1>
-          <hr class="thin bg-grayLighter">
-          <div class="flex-grid">
-            <div class="row">
-              <div class="cell size6">
-                <div class="img"></div>
-              </div>
-              <div class="cell size6">
-                <table class="table striped hovered">
-                  <tbody>
-                    <tr>
-                      <th>projectNo</th>
-                      <td>PJ20161206001</td>
-                    </tr>
-                    <tr>
-                      <th>productName</th>
-                      <td>Mobile</td>
-                    </tr>
-                    <tr>
-                      <th>orderNo</th>
-                      <td>CYCU20161206001</td>
-                    </tr>
-                    <tr>
-                      <th>moldNo</th>
-                      <td>MD20161206001</td>
-                    </tr>
-                    <tr>
-                      <th>customerNo</th>
-                      <td>0002</td>
-                    </tr>
-                    <tr>
-                      <th>template</th>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th>startDate</th>
-                      <td>2016-12-30 00:00:00</td>
-                    </tr>
-                    <tr>
-                      <th>endDate</th>
-                      <td>2016-12-30 00:00:00</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <table class="table border hovered bordered">
+      <thead>
+        <tr>
+          <th>專案編號</th>
+          <th>記錄訊息</th>
+          <th>接收時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each logs}}
+        <tr>
+          <td>{{projectNo}}</td>
+          <td>{{message}}</td>
+          <td>{{receivedAt}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
 </template>
