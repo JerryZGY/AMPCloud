@@ -1,57 +1,43 @@
+@import '../scss/common.scss';
 .project {
   cursor: pointer;
-  >td:nth-child(1) {
+  .identify {
     &:hover {
-      background-color:rgba(28,183,236,.1)
+      background-color: $table-ctrl-hover;
     }
     &:active {
-      background-color:rgba(28,183,236,.3)
+      background-color: $table-ctrl-active;
     }
   }
-  >td:nth-child(2) {
+  .stage {
     padding: unset;
-    >.flex-grid>.row>.cell {
-      >.standby {
-        background-color: #E8E8E8;
-      }
-      >.running {
-        background-color: #FFEBA5;
-      }
-      >.done {
-        background-color: #93E3B0;
-      }
-      >.freeze {
-        background-color: #9BD6F0;
-      }
-      >.error {
-        background-color: #F8C4B6;
-      }
-      >.status {
-        height: 40px;
-        line-height: 40px;
-      }
-      >.progress {
-        margin: unset;
-        background-color: white;
-        &.pg-running>.bar {
-          background-color: #FFC700;
-        }
-        &.pg-done>.bar {
-          background-color: #18BF55;
-        }
-        &.pg-error>.bar {
-          background-color: #EA613B;
-        }
-        &.pg-space>.bar {
-          background-color: unset;
-        }
-      }
-      &:hover {
-        opacity: 0.8;
-      }
-      &:active {
-        opacity: 1;
-      }
+  }
+  .cell {
+    &:hover {
+      opacity: 0.8;
     }
+    &:active {
+      opacity: 1;
+    }
+  }
+  .status {
+    height: 40px;
+    line-height: 40px;
+  }
+  .progress {
+    margin: unset;
+    background-color: white;
+  }
+  .pg-running>.bar {
+    background-color: $pg-running;
+  }
+  .pg-done>.bar {
+    background-color: $pg-done;
+  }
+  .pg-error>.bar {
+    background-color: $pg-error;
+  }
+  .pg-space>.bar {
+    background-color: $pg-space;
   }
 }
