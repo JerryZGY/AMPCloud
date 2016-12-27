@@ -17,12 +17,3 @@ Template['home'].onDestroyed(function () {
 Template['home'].helpers({
     projects: () => Projects.find(),
 });
-
-Template['home'].events({
-    'click #create'() {
-        Meteor.call('createProject', { projectNo: 'JP20161206001' });
-    },
-    'click #design'() {
-        Meteor.call('updateDesign', { projectNo: 456 });
-    },
-});
