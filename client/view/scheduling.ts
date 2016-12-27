@@ -1,7 +1,7 @@
 import './scheduling.html';
 import './scheduling.scss';
+import { Router } from '../main';
 import { Schedulings } from '../../lib/collections';
-import { Router } from '../../client/main';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 

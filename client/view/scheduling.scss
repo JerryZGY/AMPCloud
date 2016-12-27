@@ -1,28 +1,5 @@
+@import '../scss/common.scss';
 .scheduling {
-  >.app-bar {
-    background-color: #0050ef;
-    >.app-bar-element:hover,
-    .dropdown-toggle:hover {
-      background-color: #00356a;
-    }
-    >.main>span:nth-child(2)::before {
-      content: 'Scheduling';
-    }
-  }
-  >.content {
-    >table {
-      margin: unset;
-      text-align: center;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      >thead>tr {
-        background-color: #0094D5;
-        >th {
-          color: white;
-          text-align: center;
-        }
-      }
-    }
-  }
+  @include app-bar($scheduling, $scheduling-hover);
+  @include table();
 }

@@ -1,9 +1,9 @@
 import './molding.html';
 import './molding.scss';
 import * as c3 from 'c3';
-import { Moldings, Designs } from '../../lib/collections';
 import * as Models from '../../lib/models';
-import { Router } from '../../client/main';
+import { Router } from '../main';
+import { Moldings, Designs } from '../../lib/collections';
 
 let chart = null;
 const options = { sort: { receivedAt: -1 }, limit: 100 };
