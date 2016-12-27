@@ -68,4 +68,17 @@ export interface IMolding extends IStage {
     injStroke?: number[];       // 計量位置
     packingPressure?: number[]; // 保壓壓力
     packingTime?: number[];     // 保壓時間
+    defectType?: string;        // 缺陷類型
+    defectLevel?: string;       // 缺陷參數
+    defectParameter?: string;   // 缺陷程度
+}
+export interface IDesignPost {
+    projectNo: string;
+    moldNo: string;
+    templateNo: string;
+    customerNo: string;
+    productName: string;
+    orderDate: Date;
+    deadlineDate: Date;
+    receivedAt: Date;
 }
