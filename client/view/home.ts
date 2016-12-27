@@ -1,8 +1,7 @@
 import './home.html';
 import './home.scss';
 import './project';
-import { Mongo } from 'meteor/mongo';
-import { Projects } from '../lib/collections';
+import { Projects } from '../../lib/collections';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 Template['home'].onCreated(function () {
