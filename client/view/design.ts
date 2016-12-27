@@ -6,16 +6,18 @@ import { Designs } from '../../lib/collections';
 
 let progressRing = null;
 let autorunHandle: Tracker.Computation = null;
-let subscribeHandle: Meteor.SubscriptionHandle = null;
+let projectsSubscribeHandle: Meteor.SubscriptionHandle = null;
+let designsSubscribeHandle: Meteor.SubscriptionHandle = null;
 
 Template['design'].onCreated(function () {
     $('body').attr('class', 'design');
-    subscribeHandle = this.subscribe('designs');
+    projectsSubscribeHandle = this.subscribe('projects');
+    designsSubscribeHandle = this.subscribe('designs');
 });
 
 Template['design'].onRendered(function () {
     autorunHandle = this.autorun(() => {
-        if (subscribeHandle.ready()) {
+        if (designsSubscribeHandle.ready()) {
             const design = Designs.findOne({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 } });
             setTimeout(() => renderProgressRing(design.progress, design.status), 0);
         }
@@ -25,7 +27,8 @@ Template['design'].onRendered(function () {
 Template['design'].onDestroyed(function () {
     progressRing = null;
     if (autorunHandle) { autorunHandle.stop(); }
-    if (subscribeHandle) { subscribeHandle.stop(); }
+    if (projectsSubscribeHandle) { projectsSubscribeHandle.stop(); }
+    if (designsSubscribeHandle) { designsSubscribeHandle.stop(); }
 });
 
 Template['design'].helpers({

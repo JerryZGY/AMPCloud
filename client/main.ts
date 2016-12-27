@@ -7,6 +7,7 @@ import '../node_modules/metro-dist/css/metro-schemes.min.css';
 import '../node_modules/metro-dist/js/metro.min.js';
 import '../node_modules/c3/c3.min.css';
 
+import './lib/moment';
 import './view/header';
 import './view/home';
 import './view/ctrl';
