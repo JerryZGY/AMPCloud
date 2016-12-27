@@ -1,6 +1,6 @@
 import './header.html';
 import './header.scss';
-import { Router } from './main';
+import { Router } from '../main';
 
 let id;
 Template['header'].onCreated(() => {

@@ -1,7 +1,7 @@
-@import 'scss/common.scss';
+@import '../scss/common.scss';
 .home {
   @include table();
-  .identify {
+  table>thead>tr>th.identify {
     width: 20%;
   }
 }

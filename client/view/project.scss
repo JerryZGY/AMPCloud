@@ -1,5 +1,7 @@
 @import '../scss/common.scss';
 .project {
+  @include sg();
+  @include pg();
   cursor: pointer;
   .identify {
     &:hover {
@@ -9,9 +11,6 @@
       background-color: $table-ctrl-active;
     }
   }
-  .stage {
-    padding: unset;
-  }
   .cell {
     &:hover {
       opacity: 0.8;
@@ -20,6 +19,9 @@
       opacity: 1;
     }
   }
+  .stage {
+    padding: unset;
+  }
   .status {
     height: 40px;
     line-height: 40px;
@@ -27,17 +29,5 @@
   .progress {
     margin: unset;
     background-color: white;
-  }
-  .pg-running>.bar {
-    background-color: $pg-running;
-  }
-  .pg-done>.bar {
-    background-color: $pg-done;
-  }
-  .pg-error>.bar {
-    background-color: $pg-error;
-  }
-  .pg-space>.bar {
-    background-color: $pg-space;
   }
 }
