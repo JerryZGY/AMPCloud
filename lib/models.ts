@@ -46,7 +46,7 @@ export interface IDesign extends IStage {
     MB_Asm_Figure?: Status;     // 組立圖
     MB_Com_Figure?: Status;     // 零件圖
 }
-export interface IComponent extends IStage {
+export interface IPart extends IStage {
     partNo?: string;            // 零件編號
     machineNo?: string;         // 機台編號
     method?: string;            // 製程名稱
@@ -57,6 +57,7 @@ export interface IComponent extends IStage {
     error?: Error[];            // 錯誤訊息
 }
 export interface IMolding extends IStage {
+    type?: 'calc' | 'real';     // 資料類型
     moldTemp?: number;          // 模具溫度
     startPos?: number;          // 起始位置
     coolingTime?: number;       // 冷卻時間
