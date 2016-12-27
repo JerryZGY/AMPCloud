@@ -7,13 +7,13 @@ import '../node_modules/metro-dist/css/metro-schemes.min.css';
 import '../node_modules/metro-dist/js/metro.min.js';
 import '../node_modules/c3/c3.min.css';
 
-import './header';
-import '../imports/ui/home';
-import '../imports/ui/ctrl';
-import '../imports/ui/design';
-import '../imports/ui/scheduling';
-import '../imports/ui/machining';
-import '../imports/ui/molding';
+import './view/header';
+import './view/home';
+import './view/ctrl';
+import './view/design';
+import './view/scheduling';
+import './view/machining';
+import './view/molding';
 import ClientRouter from '../lib/clientRouter';
 
 export const Router = new ClientRouter();
