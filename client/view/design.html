@@ -1,6 +1,21 @@
 <template name="design">
   <div class="content">
-    <div class="svgContainer">
+    <table class="table hovered border" style="width: unset; position: absolute;">
+      <thead>
+        <tr>
+          <th>模具編號</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>161200041M</td>
+        </tr>
+        <tr>
+          <td>161200043M</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="svg-container">
       <svg viewBox="0 0 375 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -10,7 +25,7 @@
           <line id="arrowHLine" class="line" x2="33" marker-end="url(#arrow)" />
           <polyline id="arrowPLine" class="line" points="75,50 75,85 -125,85" />
         </defs>
-        <g class="mainGroup" transform="translate(12.5,12.5)">
+        <g class="group" transform="translate(12.5,12.5)">
           {{#with design}}
           <g id="MS_Create">
             <use xlink:href="#arrowVLine" />
@@ -52,7 +67,7 @@
             <rect class="{{MB_Com_Figure}}" width="150" height="50" rx="10" ry="10" />
             <text x="75" y="33">零件圖</text>
           </g>
-          <g class="subGroup" transform="translate(265, 520)">
+          <g class="group" transform="translate(265, 520)">
             <g id="chart" transform="translate(42.5, -40)"></g>
             <text class="percent" x="42.5" y="-33">{{progress}}%</text>
             <g transform="translate(5, 5)">
