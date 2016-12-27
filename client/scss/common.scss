@@ -1,0 +1,34 @@
+@import 'mixins';
+@import 'colorsheet';
+@mixin sg() {
+  .standby {
+    @include stage($standby, $standby-stroke);
+  }
+  .running {
+    @include stage($running, $running-stroke);
+  }
+  .done {
+    @include stage($done, $done-stroke);
+  }
+  .freeze {
+    @include stage($freeze, $freeze-stroke);
+  }
+  .error {
+    @include stage($error, $error-stroke);
+  }
+}
+
+@mixin pg() {
+  .pg-running {
+    @include progress($pg-running);
+  }
+  .pg-done {
+    @include progress($pg-done);
+  }
+  .pg-error {
+    @include progress($pg-error);
+  }
+  .pg-space {
+    @include progress($pg-space);
+  }
+}
