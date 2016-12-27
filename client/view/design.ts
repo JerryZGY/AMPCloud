@@ -1,8 +1,8 @@
 import './design.html';
 import './design.scss';
 import * as d3 from 'd3';
-import { Designs } from '../../lib/collections';
 import { Router } from '../main';
+import { Designs } from '../../lib/collections';
 
 let progressRing = null;
 let autorunHandle: Tracker.Computation = null;

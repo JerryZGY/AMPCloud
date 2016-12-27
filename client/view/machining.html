@@ -25,30 +25,33 @@
           <td>{{startTime}}</td>
           <td>{{endTime}}</td>
           <td>
-            <a class="status mif-traff mif-2x {{status}}"></a>
+            <a class="icon mif-traff mif-2x pg-{{status}}"></a>
           </td>
           <td>
-            <a class="error mif-warning mif-2x"></a>
+            <a class="info mif-warning mif-2x"></a>
           </td>
         </tr>
         {{/each}}
       </tbody>
     </table>
-    <div id="dialog" data-role="dialog" data-type="alert" data-windows-style="true" data-close-button="true" data-overlay="true" data-overlay-click-close="true">
-      <h1><span class="mif-warning"></span><span>錯誤訊息</span></h1>
+    <div id="dialog" data-role="dialog" data-type="alert" data-windows-style="true" data-close-button="true" data-overlay="true"
+      data-overlay-click-close="true">
+      <div class="title">
+        <span class="mif-warning"></span>
+        <span>錯誤訊息</span>
+      </div>
       <!--{{#with scheduling}}-->
       <table class="table border bordered">
         <thead>
           <tr class="thead">
             <th>機台編號</th>
-            <th>錯誤類型</th>
-            <th>SpindleSpeed</th>
-            <th>Feed</th>
-            <th>Cutters</th>
-            <th>Depth</th>
-            <th>Threshold</th>
-            <th>Coordinate</th>
-            <th>NC_code</th>
+            <th>異常狀況</th>
+            <th>轉速</th>
+            <th>進給</th>
+            <th>刀刃數</th>
+            <th>切深</th>
+            <th>門檻值</th>
+            <th>NC碼</th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +64,6 @@
             <td>5{{Cutters}}</td>
             <td>6{{Depth}}</td>
             <td>7{{Threshold}}</td>
-            <td>8{{Coordinate}}</td>
             <td>9{{NC_code}}</td>
           </tr>
           <!--{{/each}}-->

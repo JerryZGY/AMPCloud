@@ -1,7 +1,7 @@
 import './machining.html';
 import './machining.scss';
+import { Router } from '../main';
 import { Schedulings } from '../../lib/collections';
-import { Router } from '../../client/main';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 
@@ -19,7 +19,7 @@ Template['machining'].helpers({
 });
 
 Template['machining'].events({
-    'click .error'(e, tmpl) {
+    'click .info'(e, tmpl) {
         // console.log('e', this);
         // console.log('target', e.currentTarget);
         showDialog();

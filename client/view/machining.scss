@@ -1,55 +1,19 @@
+@import '../scss/common.scss';
 .machining {
-  >.app-bar {
-    background-color: #6a00ff;
-    >.app-bar-element:hover,
-    .dropdown-toggle:hover {
-      background-color: #4b0096;
-    }
-    >.main>span:nth-child(2)::before {
-      content: 'Machining';
-    }
-  }
-  >.content {
-    >table {
-      margin: unset;
-      text-align: center;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      >thead>tr {
-        background-color: #0094D5;
-        >th {
-          color: white;
-          text-align: center;
-        }
-      }
-      .status {
-        &.running {
-          color: #FFC700;
-        }
-        &.done {
-          color: #18BF55;
-        }
-        &.error {
-          color: #EA613B;
-        }
-      }
-    }
+  @include app-bar($machining, $machining-hover);
+  @include table();
+  @include pg();
+  cursor: default;
+  .info {
+    cursor: pointer;
+    color: $pg-error;
   }
   #dialog {
-    padding: 25px;
+    padding: 10px;
   }
-  .thead {
-    background-color: #0094D5;
-    >th {
-      color: white;
-      text-align: center;
-    }
-  }
-  .tbody {
-    background-color: white;
-    >td {
-      color: black;
-    }
+  .title {
+    margin: 5px 0;
+    font-size: 25px;
+    text-align: center;
   }
 }
