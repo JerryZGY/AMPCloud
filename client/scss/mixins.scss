@@ -1,0 +1,48 @@
+@mixin stage($color, $stroke) {
+  background-color: $color;
+  fill: $color;
+  stroke: $stroke;
+  stroke-width: 1;
+}
+
+@mixin progress($color) {
+  fill: $color;
+  background-color: $color;
+  >.bar {
+    background-color: $color;
+  }
+}
+
+@mixin app-bar($color, $hover) {
+  >.app-bar {
+    background-color: $color;
+    >.app-bar-element:hover,
+    .dropdown-toggle:hover {
+      background-color: $hover;
+    }
+  }
+}
+
+@mixin table() {
+  table.table {
+    margin: unset;
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    >thead {
+      background-color: $table-thead;
+      >tr>th {
+        color: $table-thead-text;
+        text-align: center;
+      }
+    }
+    >tbody {
+      background-color: $table-tbody;
+      >tr>td {
+        color: $table-tbody-text;
+        text-align: center;
+      }
+    }
+  }
+}
