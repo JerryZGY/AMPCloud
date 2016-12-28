@@ -11,6 +11,9 @@
   #dialog {
     padding: 10px;
   }
+  .dialog-overlay {
+    background-color: $dialog-overlay;
+  }
   .title {
     margin: 5px 0;
     font-size: 25px;

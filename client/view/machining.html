@@ -8,8 +8,8 @@
           <th>機台編號</th>
           <th>預估開始時間</th>
           <th>預估結束時間</th>
-          <th>開始時間</th>
-          <th>結束時間</th>
+          <th>實際開始時間</th>
+          <th>實際結束時間</th>
           <th>零件狀態</th>
           <th>錯誤訊息</th>
         </tr>
@@ -20,10 +20,10 @@
           <td>{{partNo}}</td>
           <td>{{method}}</td>
           <td>{{machineNo}}</td>
-          <td>{{expectedStartTime}}</td>
-          <td>{{expectedEndTime}}</td>
-          <td>{{startTime}}</td>
-          <td>{{endTime}}</td>
+          <td>{{formatDate expectedStartTime}}</td>
+          <td>{{formatDate expectedEndTime}}</td>
+          <td>{{formatDate startTime}}</td>
+          <td>{{formatDate endTime}}</td>
           <td>
             <a class="icon mif-traff mif-2x pg-{{status}}"></a>
           </td>
@@ -40,36 +40,36 @@
         <span class="mif-warning"></span>
         <span>錯誤訊息</span>
       </div>
-      <!--{{#with scheduling}}-->
       <table class="table border bordered">
         <thead>
           <tr class="thead">
-            <th>機台編號</th>
             <th>異常狀況</th>
-            <th>轉速</th>
-            <th>進給</th>
-            <th>刀刃數</th>
-            <th>切深</th>
-            <th>門檻值</th>
-            <th>NC碼</th>
+            <th>轉動速度</th>
+            <th>進給量值</th>
+            <th>刀刃數量</th>
+            <th>切割深度</th>
+            <th>門檻量值</th>
+            <th>NC編碼</th>
+            <th>異常發生時間</th>
+            <th>異常抑制時間</th>
           </tr>
         </thead>
         <tbody>
-          <!--{{#each error}}-->
+          {{#each sample}}
           <tr class="tbody">
-            <td>1{{machineNo}}</td>
-            <td>2{{errorType}}</td>
-            <td>3{{SpindleSpeed}}</td>
-            <td>4{{Feed}}</td>
-            <td>5{{Cutters}}</td>
-            <td>6{{Depth}}</td>
-            <td>7{{Threshold}}</td>
-            <td>9{{NC_code}}</td>
+            <td>{{type}}</td>
+            <td>{{spindleSpeed}}</td>
+            <td>{{feed}}</td>
+            <td>{{cutters}}</td>
+            <td>{{depth}}</td>
+            <td>{{threshold}}</td>
+            <td>{{ncCode}}</td>
+            <td>{{startTime}}</td>
+            <td>{{endTime}}</td>
           </tr>
-          <!--{{/each}}-->
+          {{/each}}
         </tbody>
       </table>
-      <!--{{/with}}-->
     </div>
   </div>
 </template>
