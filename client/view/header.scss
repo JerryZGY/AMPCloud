@@ -23,7 +23,7 @@ body>.app-bar {
   }
   >.app-bar-element.active {
     color: black;
-    display: block;
+    display: block !important;
     cursor: default;
     pointer-events: none;
     background-color: white;

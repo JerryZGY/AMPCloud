@@ -1,6 +1,9 @@
 @import '../scss/common.scss';
 .home {
   @include table();
+  .app-bar-element {
+    display: none !important;
+  }
   table>thead>tr>th.identify {
     width: 20%;
   }
