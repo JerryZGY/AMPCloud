@@ -17,7 +17,7 @@ Template['molding'].onCreated(function () {
 Template['molding'].onRendered(function () {
     autorunHandle = this.autorun(() => {
         if (subscribeHandle.ready()) {
-            const moldings = formatMoldings(Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: 1 }, limit: 100 }).fetch());
+            const moldings = formatMoldings(Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: 1 } }).fetch());
             setTimeout(() => renderChart(moldings), 0);
         }
     });
@@ -87,11 +87,13 @@ function renderChart(molding: Molding) {
         const injSpeedChart = c3.generate({
             bindto: '#injSpeed',
             data: { columns: injSpeedColumns },
+            axis: { x: { label: { text: '模次', position: 'outer-center' } }, y: { label: { text: '速度', position: 'outer-middle' } } },
         });
         charts.push(injSpeedChart);
         const packingPressureChart = c3.generate({
             bindto: '#packingPressure',
             data: { columns: packingPressureColumns },
+            axis: { x: { label: { text: '模次', position: 'outer-center' } }, y: { label: { text: '壓力', position: 'outer-middle' } } },
         });
         charts.push(packingPressureChart);
     } else {
