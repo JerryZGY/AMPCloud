@@ -30,6 +30,7 @@
 @mixin table() {
   table.table {
     margin: unset;
+    cursor: default;
     text-align: center;
     user-select: none;
     -moz-user-select: none;
