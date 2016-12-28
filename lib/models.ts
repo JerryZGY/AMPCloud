@@ -1,14 +1,12 @@
 type Status = 'standby' | 'running' | 'done' | 'freeze' | 'error';
 type Error = {
-    workOrder: string;          // 專案編號
-    machineNo: string;          // 機台編號
-    errorType: string;          // 異常狀況
-    SpindleSpeed: string;       // 轉速
-    Feed: string;               // 進給
-    Cutters: string;            // 刀刃數
-    Depth: string;              // 切深
-    Threshold: string;          // 門檻值
-    NC_code: string;            // NC碼
+    type: string;               // 異常狀況
+    spindleSpeed: string;       // 轉速
+    feed: string;               // 進給
+    cutters: string;            // 刀刃數
+    depth: string;              // 切深
+    threshold: string;          // 門檻值
+    ncCode: string;             // NC碼
 }
 export interface ICollection {
     _id?: string;               // DB識別碼
@@ -52,8 +50,8 @@ export interface IPart extends IStage {
     method?: string;            // 製程名稱
     expectedStartTime?: Date;   // 預估開始時間
     expectedEndTime?: Date;     // 預估結束時間
-    startTime?: Date;           // 開始時間
-    endTime?: Date;             // 結束時間
+    startTime?: Date;           // 實際開始時間
+    endTime?: Date;             // 實際結束時間
     error?: Error[];            // 錯誤訊息
 }
 export interface IMolding extends IStage {
