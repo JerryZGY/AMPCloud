@@ -1,13 +1,15 @@
 type Status = 'standby' | 'running' | 'done' | 'freeze' | 'error';
 type Error = {
-    type: string;               // 異常狀況
-    spindleSpeed: string;       // 轉速
-    feed: string;               // 進給
-    cutters: string;            // 刀刃數
-    depth: string;              // 切深
-    threshold: string;          // 門檻值
-    ncCode: string;             // NC碼
-}
+    type: string;               // 異常類型
+    spindleSpeed: string;       // 轉動速度
+    feed: string;               // 進給量值
+    cutters: string;            // 刀刃數量
+    depth: string;              // 切割深度
+    threshold: string;          // 門檻量值
+    ncCode: string;             // NC編碼
+    startTime: Date;            // 發生時間
+    endTime: Date;              // 抑制時間
+};
 export interface ICollection {
     _id?: string;               // DB識別碼
 }
