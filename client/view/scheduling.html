@@ -17,8 +17,8 @@
           <td>{{partNo}}</td>
           <td>{{method}}</td>
           <td>{{machineNo}}</td>
-          <td>{{expectedStartTime}}</td>
-          <td>{{expectedEndTime}}</td>
+          <td>{{formatDate expectedStartTime}}</td>
+          <td>{{formatDate expectedEndTime}}</td>
           <td><a class="mif-file-download mif-2x" href="{{fileUrl}}"></a></td>
         </tr>
         {{/each}}
