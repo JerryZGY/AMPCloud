@@ -1,20 +1,20 @@
 <template name="design">
   <div class="content">
-    <!--<table class="table hovered border" style="width: unset; position: absolute;">
+    {{#with design}}
+    <table class="table hovered border" style="width: unset; position: absolute;">
       <thead>
         <tr>
           <th>模具編號</th>
         </tr>
       </thead>
       <tbody>
+        {{#each moldNo}}
         <tr>
-          <td>161200041M</td>
+          <td>{{this}}</td>
         </tr>
-        <tr>
-          <td>161200043M</td>
-        </tr>
+        {{/each}}
       </tbody>
-    </table>-->
+    </table>
     <div class="svg-container">
       <svg viewBox="0 0 375 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -26,7 +26,7 @@
           <polyline id="arrowPLine" class="line" points="75,50 75,85 -125,85" />
         </defs>
         <g class="group" transform="translate(12.5,12.5)">
-          {{#with design}}
+
           <g id="MS_Create">
             <use xlink:href="#arrowVLine" />
             <rect class="{{MS_Create}}" width="150" height="50" rx="10" ry="10" />
@@ -91,9 +91,10 @@
               <text class="tip" x="37.5" y="17">ERROR</text>
             </g>
           </g>
-          {{/with}}
+
         </g>
       </svg>
     </div>
+    {{/with}}
   </div>
 </template>
