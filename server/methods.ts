@@ -38,23 +38,23 @@ Meteor.methods({
     },
     'updateMachining'(data: Models.IPart) {
         const selector = { projectNo: data.projectNo, partNo: data.partNo };
-        const part = Parts.findOne(selector);
+        const part = Parts.findOne(selector) || data;
         const startTime = data.startTime;
         if (startTime) { part.startTime = startTime; }
         const endTime = data.endTime;
         if (endTime) { part.endTime = endTime; }
         const status = data.status;
         if (status) { part.status = status; }
-        const error = data.error;
+        const error: any = data.error;
         if (error) {
-            if (part.error) {
-                part.error.push.apply(null, error);
+            if (part.error && part.error.length) {
+                part.error.push(error);
             } else {
-                part.error = error;
+                part.error = [error];
             }
         }
         insertLog(data);
-        Parts.update(selector, part);
+        Parts.upsert(selector, part);
     },
     'updateMolding'(data: Models.IMolding) {
         insertLog(data);
