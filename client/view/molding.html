@@ -1,6 +1,17 @@
 <template name="molding">
   <div class="content">
-    <div id="chart"></div>
+    <div class="tabcontrol" data-role="tabcontrol">
+      <ul class="tabs">
+        <li><a href="#meltTemp">熔膠溫度</a></li>
+        <li><a href="#injSpeed">射出速度</a></li>
+        <li><a href="#packingPressure">保壓壓力</a></li>
+      </ul>
+      <div class="frames">
+        <div id="meltTemp"></div>
+        <div id="injSpeed"></div>
+        <div id="packingPressure"></div>
+      </div>
+    </div>
     <table class="table border hovered bordered">
       <thead>
         <tr>
@@ -8,13 +19,11 @@
           <th>起始位置</th>
           <th>鬆退量值</th>
           <th>背壓壓力</th>
-          <th>一段熔溫</th>
-          <th>二段熔溫</th>
-          <th>一段射速</th>
-          <th>二段射速</th>
-          <th>一段保壓</th>
-          <th>二段保壓</th>
+          <th>熔膠溫度</th>
+          <th>射出速度</th>
+          <th>保壓壓力</th>
           <th>記錄時間</th>
+          <th>接收時間</th>
         </tr>
       </thead>
       <tbody>
@@ -24,12 +33,10 @@
           <td>{{startPos}}</td>
           <td>{{suckBackStroke}}</td>
           <td>{{suckBackPressure}}</td>
-          <td>{{meltTemp.[0]}}</td>
-          <td>{{meltTemp.[1]}}</td>
-          <td>{{injSpeed.[0]}}</td>
-          <td>{{injSpeed.[1]}}</td>
-          <td>{{packingPressure.[0]}}</td>
-          <td>{{packingPressure.[1]}}</td>
+          <td>{{parseArray meltTemp}}</td>
+          <td>{{parseArray injSpeed}}</td>
+          <td>{{parseArray packingPressure}}</td>
+          <td>{{formatDate timeIndex}}</td>
           <td>{{formatDate receivedAt}}</td>
         </tr>
         {{/each}}
