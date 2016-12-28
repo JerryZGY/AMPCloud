@@ -2,8 +2,8 @@
 .project {
   @include sg();
   @include pg();
-  cursor: pointer;
   .identify {
+    cursor: pointer;
     &:hover {
       background-color: $table-ctrl-hover;
     }
@@ -12,6 +12,7 @@
     }
   }
   .cell {
+    cursor: pointer;
     &:hover {
       opacity: 0.8;
     }
