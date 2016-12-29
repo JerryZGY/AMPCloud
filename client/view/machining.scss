@@ -4,6 +4,12 @@
   @include table();
   @include pg();
   cursor: default;
+  .content {
+    display: none;
+  }
+  .icon {
+    color: $traff-icon;
+  }
   .info {
     color: $warning-icon;
     &.error {

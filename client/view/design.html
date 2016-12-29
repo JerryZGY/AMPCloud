@@ -1,7 +1,7 @@
 <template name="design">
   <div class="content">
     {{#with design}}
-    <table class="table hovered border" style="width: unset; position: absolute;">
+    <table class="moldNo table hovered border">
       <thead>
         <tr>
           <th>模具編號</th>
@@ -97,4 +97,5 @@
     </div>
     {{/with}}
   </div>
+  {{> preloader}}
 </template>

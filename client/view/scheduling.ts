@@ -10,7 +10,23 @@ Template['scheduling'].onCreated(function () {
     subscribeHandle = this.subscribe('parts');
 });
 
+let preloaded = false;
+let autorunHandle: Tracker.Computation = null;
+Template['scheduling'].onRendered(function () {
+    autorunHandle = this.autorun(() => {
+        if (subscribeHandle.ready() && !preloaded) {
+            setTimeout(() => {
+                $('#preloader').fadeOut(1000);
+                $('.content').fadeIn(1200);
+                preloaded = true;
+            }, 0);
+        }
+    });
+});
+
 Template['scheduling'].onDestroyed(function () {
+    preloaded = false;
+    if (autorunHandle) { autorunHandle.stop(); }
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
 

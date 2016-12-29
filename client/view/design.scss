@@ -6,6 +6,11 @@
   @include pg();
   .content {
     overflow-y: hidden;
+    display: none;
+  }
+  .moldNo {
+    width: unset;
+    position: absolute;
   }
   .svg-container {
     width: 375px;

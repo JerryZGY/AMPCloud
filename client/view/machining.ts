@@ -10,7 +10,23 @@ Template['machining'].onCreated(function () {
     subscribeHandle = this.subscribe('parts');
 });
 
+let preloaded = false;
+let autorunHandle: Tracker.Computation = null;
+Template['machining'].onRendered(function () {
+    autorunHandle = this.autorun(() => {
+        if (subscribeHandle.ready() && !preloaded) {
+            setTimeout(() => {
+                $('#preloader').fadeOut(1000);
+                $('.content').fadeIn(1200);
+                preloaded = true;
+            }, 0);
+        }
+    });
+});
+
 Template['machining'].onDestroyed(function () {
+    preloaded = false;
+    if (autorunHandle) { autorunHandle.stop(); }
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
 

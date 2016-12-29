@@ -2,4 +2,7 @@
 .scheduling {
   @include app-bar($scheduling, $scheduling-hover);
   @include table();
+  .content {
+    display: none;
+  }
 }

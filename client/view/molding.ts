@@ -95,6 +95,11 @@ function renderChart(molding: Molding) {
             bindto: '#packingPressure',
             data: { columns: packingPressureColumns },
             axis: { x: { label: { text: '模次', position: 'outer-center' } }, y: { label: { text: '壓力', position: 'outer-middle' } } },
+            onrendered: () => {
+                console.log('rendered');
+                $('#preloader').fadeOut(1000);
+                $('.table').fadeIn(1200);
+            },
         });
         charts.push(packingPressureChart);
     } else {
