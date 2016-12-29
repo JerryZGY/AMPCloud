@@ -5,10 +5,13 @@
   @include pg();
   cursor: default;
   .info {
-    cursor: pointer;
-    color: $pg-error;
+    color: $warning-icon;
+    &.error {
+      color: $warning-icon-error;
+      cursor: pointer;
+    }
   }
-  #dialog {
+  .dialog {
     padding: 10px;
   }
   .dialog-overlay {

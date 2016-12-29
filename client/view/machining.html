@@ -28,48 +28,51 @@
             <a class="icon mif-traff mif-2x pg-{{status}}"></a>
           </td>
           <td>
-            <a class="info mif-warning mif-2x"></a>
+            <a class="info mif-warning mif-2x {{hasError error}}"></a>
           </td>
         </tr>
+        <div id="{{_id}}">
+          {{#with error}}
+          <div data-role="dialog" data-type="alert" data-windows-style="true" data-close-button="true" data-overlay="true" data-overlay-click-close="true">
+            <div class="title">
+              <span class="mif-warning"></span>
+              <span>異常資訊</span>
+            </div>
+            <table class="table border bordered">
+              <thead>
+                <tr class="thead">
+                  <th>異常類型</th>
+                  <th>轉動速度</th>
+                  <th>進給量值</th>
+                  <th>刀刃數量</th>
+                  <th>切割深度</th>
+                  <th>門檻量值</th>
+                  <th>NC編碼</th>
+                  <th>發生時間</th>
+                  <th>抑制時間</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each splice this}}
+                <tr class="tbody">
+                  <td>{{type}}</td>
+                  <td>{{spindleSpeed}}</td>
+                  <td>{{feed}}</td>
+                  <td>{{cutters}}</td>
+                  <td>{{depth}}</td>
+                  <td>{{threshold}}</td>
+                  <td>{{ncCode}}</td>
+                  <td>{{formatDate startTime}}</td>
+                  <td>{{formatDate endTime}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          {{/with}}
+        </div>
         {{/each}}
       </tbody>
     </table>
-    <div id="dialog" data-role="dialog" data-type="alert" data-windows-style="true" data-close-button="true" data-overlay="true"
-      data-overlay-click-close="true">
-      <div class="title">
-        <span class="mif-warning"></span>
-        <span>異常資訊</span>
-      </div>
-      <table class="table border bordered">
-        <thead>
-          <tr class="thead">
-            <th>異常類型</th>
-            <th>轉動速度</th>
-            <th>進給量值</th>
-            <th>刀刃數量</th>
-            <th>切割深度</th>
-            <th>門檻量值</th>
-            <th>NC編碼</th>
-            <th>發生時間</th>
-            <th>抑制時間</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each sample}}
-          <tr class="tbody">
-            <td>{{type}}</td>
-            <td>{{spindleSpeed}}</td>
-            <td>{{feed}}</td>
-            <td>{{cutters}}</td>
-            <td>{{depth}}</td>
-            <td>{{threshold}}</td>
-            <td>{{ncCode}}</td>
-            <td>{{formatDate startTime}}</td>
-            <td>{{formatDate endTime}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
   </div>
 </template>
