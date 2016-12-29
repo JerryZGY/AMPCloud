@@ -20,7 +20,7 @@ Meteor.methods({
             deadlineDate: src.deadlineDate,
             receivedAt: src.receivedAt,
         };
-        const url = 'http://140.135.96.39/icmold/AMPWebService2.asmx/InsertProjInfo';
+        const url = Meteor.settings['designUrl'];
         await postToWebService(url, data);
         Logs.insert({ projectNo: _id, message: `Notify design`, receivedAt: new Date() });
     },
