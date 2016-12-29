@@ -6,7 +6,7 @@
     "start": "ROOT_URL=http://id40.webpat.co/amp meteor"
   },
   "dependencies": {
-    "babel-runtime": "6.18.0",
+    "babel-runtime": "6.20.0",
     "c3": "0.4.11",
     "d3": "4.4.0",
     "got": "6.6.3",
@@ -16,8 +16,8 @@
     "winston": "2.3.0"
   },
   "devDependencies": {
-    "tslint": "4.0.2",
+    "tslint": "4.2.0",
     "typescript": "2.1.4",
-    "typings": "2.0.0"
+    "typings": "2.1.0"
   }
 }
