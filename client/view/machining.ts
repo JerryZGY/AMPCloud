@@ -17,7 +17,7 @@ Template['machining'].onDestroyed(function () {
 Template['machining'].helpers({
     parts: () => Parts.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
     hasError: (err) => err && err.length ? 'error' : '',
-    splice: (arr = []) => arr.splice(0, 5),
+    splice: (arr = []) => arr.reverse().splice(0, 5),
 });
 
 Template['machining'].events({
