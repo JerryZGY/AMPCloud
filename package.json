@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ROOT_URL=http://id40.webpat.co/amp meteor"
+    "start": "set ROOT_URL=http://id40.webpat.co/amp && meteor --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "6.20.0",
