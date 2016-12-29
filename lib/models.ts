@@ -1,12 +1,12 @@
 type Status = 'standby' | 'running' | 'done' | 'freeze' | 'error';
 type Error = {
     type: string;               // 異常類型
-    spindleSpeed: string;       // 轉動速度
-    feed: string;               // 進給量值
-    cutters: string;            // 刀刃數量
-    depth: string;              // 切割深度
-    threshold: string;          // 門檻量值
-    ncCode: string;             // NC編碼
+    spindleSpeed: string;       // 主軸轉速
+    feed: string;               // 進給
+    cutters: string;            // 刀刃數
+    depth: string;              // 切深
+    threshold: string;          // 門檻值
+    ncCode: string;             // 單節NC碼
     startTime: Date;            // 發生時間
     endTime: Date;              // 抑制時間
 };
@@ -54,7 +54,7 @@ export interface IPart extends IStage {
     expectedEndTime?: Date;     // 預估結束時間
     startTime?: Date;           // 實際開始時間
     endTime?: Date;             // 實際結束時間
-    error?: Error[];            // 錯誤訊息
+    error?: Error[];            // 異常資訊
 }
 export interface IMolding extends IStage {
     type?: 'calc' | 'real';     // 資料類型
