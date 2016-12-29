@@ -6,6 +6,7 @@ import { Router } from '../main';
 import { Moldings, Designs } from '../../lib/collections';
 
 let charts = [];
+let preloaded = false;
 let autorunHandle: Tracker.Computation = null;
 let subscribeHandle: Meteor.SubscriptionHandle = null;
 
@@ -26,6 +27,7 @@ Template['molding'].onRendered(function () {
 
 Template['molding'].onDestroyed(function () {
     charts = [];
+    preloaded = false;
     if (autorunHandle) { autorunHandle.stop(); }
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
@@ -96,9 +98,11 @@ function renderChart(molding: Molding) {
             data: { columns: packingPressureColumns },
             axis: { x: { label: { text: '模次', position: 'outer-center' } }, y: { label: { text: '壓力', position: 'outer-middle' } } },
             onrendered: () => {
-                console.log('rendered');
-                $('#preloader').fadeOut(1000);
-                $('.table').fadeIn(1200);
+                if (!preloaded) {
+                    $('#preloader').fadeOut(1000);
+                    $('.table').fadeIn(1200);
+                    preloaded = true;
+                }
             },
         });
         charts.push(packingPressureChart);
