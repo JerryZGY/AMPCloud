@@ -2,4 +2,10 @@
 .molding {
   @include app-bar($molding, $molding-hover);
   @include table();
+  .calc {
+    background-color: $molding-calc;
+    &:hover {
+      background-color: $molding-calc-hover !important;
+    }
+  }
 }
