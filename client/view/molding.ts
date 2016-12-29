@@ -17,8 +17,9 @@ Template['molding'].onCreated(function () {
 Template['molding'].onRendered(function () {
     autorunHandle = this.autorun(() => {
         if (subscribeHandle.ready()) {
-            const moldings = formatMoldings(Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: 1 } }).fetch());
-            setTimeout(() => renderChart(moldings), 0);
+            const moldings = Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: 1 } }).fetch().filter(x => x.type === 'real');
+            const formatedMoldings = formatMoldings(moldings);
+            setTimeout(() => renderChart(formatedMoldings), 0);
         }
     });
 });
@@ -35,9 +36,9 @@ Template['molding'].helpers({
 });
 
 type Molding = {
-    meltTemp: number[][];
-    injSpeed: number[][];
-    packingPressure: number[][];
+    meltTemp: string[][];
+    injSpeed: string[][];
+    packingPressure: string[][];
 };
 
 enum Level { '一', '二', '三', '四', '五' }
@@ -46,7 +47,7 @@ enum Level { '一', '二', '三', '四', '五' }
  * Input: [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
  * Output: [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]
  */
-function transformDimension(source: number[][]) {
+function transformDimension(source: string[][]) {
     let results = [];
     source.forEach(src => {
         src.forEach((x, columnsIndex) => {
