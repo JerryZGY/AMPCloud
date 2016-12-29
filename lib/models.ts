@@ -58,16 +58,17 @@ export interface IPart extends IStage {
 }
 export interface IMolding extends IStage {
     type?: 'calc' | 'real';     // 資料類型
-    moldTemp?: number;          // 模具溫度
-    startPos?: number;          // 起始位置
-    coolingTime?: number;       // 冷卻時間
-    suckBackStroke?: number;    // 鬆退量值
-    suckBackPressure?: number;  // 背壓量值
-    meltTemp?: number[];        // 熔膠溫度
-    injSpeed?: number[];        // 射出速度
-    injStroke?: number[];       // 計量位置
-    packingPressure?: number[]; // 保壓壓力
-    packingTime?: number[];     // 保壓時間
+    moldNo?: string;            // 模具編號
+    moldTemp?: string;          // 模具溫度
+    startPos?: string;          // 起始位置
+    coolingTime?: string;       // 冷卻時間
+    suckBackStroke?: string;    // 鬆退量值
+    suckBackPressure?: string;  // 背壓量值
+    meltTemp?: string[];        // 熔膠溫度
+    injSpeed?: string[];        // 射出速度
+    injStroke?: string[];       // 計量位置
+    packingPressure?: string[]; // 保壓壓力
+    packingTime?: string[];     // 保壓時間
     defectType?: string;        // 缺陷類型
     defectLevel?: string;       // 缺陷參數
     defectParameter?: string;   // 缺陷程度
