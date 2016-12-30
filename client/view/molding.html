@@ -22,6 +22,7 @@
           <th>熔膠溫度</th>
           <th>射出速度</th>
           <th>保壓壓力</th>
+          <th>缺陷資訊</th>
           <th>記錄時間</th>
         </tr>
       </thead>
@@ -35,8 +36,37 @@
           <td>{{parseArray meltTemp}}</td>
           <td>{{parseArray injSpeed}}</td>
           <td>{{parseArray packingPressure}}</td>
+          <td>
+            <a class="info mif-indent-increase mif-2x {{hasDefect defect}}"></a>
+          </td>
           <td>{{formatDate timeIndex}}</td>
         </tr>
+        <div id="{{_id}}">
+          {{#with defect}}
+          <div data-role="dialog" data-type="warning" data-close-button="true" data-overlay="true" data-overlay-click-close="true">
+            <div class="title">
+              <span class="mif-indent-increase"></span>
+              <span>缺陷資訊</span>
+            </div>
+            <table class="table border bordered">
+              <thead>
+                <tr class="thead">
+                  <th>類型</th>
+                  <th>參數</th>
+                  <th>程度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tbody">
+                  <td>{{type}}</td>
+                  <td>{{param}}</td>
+                  <td>{{level}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {{/with}}
+        </div>
         {{/each}}
       </tbody>
     </table>

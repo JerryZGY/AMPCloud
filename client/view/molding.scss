@@ -2,13 +2,22 @@
 .molding {
   @include app-bar($molding, $molding-hover);
   @include table();
-  .table {
-    display: none;
+  @include dialog();
+  .table,
+  .tabcontrol {
+    opacity: 0;
   }
   .calc {
     background-color: $molding-calc;
     &:hover {
       background-color: $molding-calc-hover !important;
+    }
+  }
+  .info {
+    color: $defect-icon;
+    &.active {
+      color: $defect-icon-active;
+      cursor: pointer;
     }
   }
 }

@@ -18,7 +18,7 @@ Template['molding'].onCreated(function () {
 Template['molding'].onRendered(function () {
     autorunHandle = this.autorun(() => {
         if (subscribeHandle.ready()) {
-            const moldings = Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: 1 } }).fetch().filter(x => x.type === 'real');
+            const moldings = Moldings.find({ projectNo: Router.get('id') }, { sort: { timeIndex: 1 } }).fetch().filter(x => x.type === 'real');
             const formatedMoldings = formatMoldings(moldings);
             setTimeout(() => renderChart(formatedMoldings), 0);
         }
@@ -33,8 +33,16 @@ Template['molding'].onDestroyed(function () {
 });
 
 Template['molding'].helpers({
-    moldings: () => Moldings.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 50 }),
+    moldings: () => Moldings.find({ projectNo: Router.get('id') }, { sort: { timeIndex: -1 }, limit: 50 }),
     parseArray: (data: string[]) => data.map(datum => datum ? datum : '0').join(', '),
+    hasDefect: (err) => err ? 'active' : '',
+});
+
+Template['molding'].events({
+    'click .info'() {
+        const target = $(`#${this._id}>div`);
+        if (target.length) { target.data('dialog').open(); }
+    },
 });
 
 type Molding = {
@@ -100,7 +108,8 @@ function renderChart(molding: Molding) {
             onrendered: () => {
                 if (!preloaded) {
                     $('#preloader').fadeOut(1000);
-                    $('.table').fadeIn(1200);
+                    $('.table').fadeTo(1200, 1);
+                    $('.tabcontrol').fadeTo(1200, 1);
                     preloaded = true;
                 }
             },

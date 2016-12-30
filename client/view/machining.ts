@@ -32,7 +32,7 @@ Template['machining'].onDestroyed(function () {
 
 Template['machining'].helpers({
     parts: () => Parts.find({ projectNo: Router.get('id') }, { sort: { receivedAt: -1 }, limit: 100 }),
-    hasError: (err) => err && err.length ? 'error' : '',
+    hasError: (err) => err && err.length ? 'active' : '',
     splice: (arr = []) => arr.reverse().splice(0, 5),
 });
 

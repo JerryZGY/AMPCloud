@@ -3,6 +3,7 @@
   @include app-bar($machining, $machining-hover);
   @include table();
   @include pg();
+  @include dialog();
   cursor: default;
   .content {
     display: none;
@@ -12,20 +13,9 @@
   }
   .info {
     color: $warning-icon;
-    &.error {
-      color: $warning-icon-error;
+    &.active {
+      color: $warning-icon-active;
       cursor: pointer;
     }
-  }
-  .dialog {
-    padding: 10px;
-  }
-  .dialog-overlay {
-    background-color: $dialog-overlay;
-  }
-  .title {
-    margin: 5px 0;
-    font-size: 25px;
-    text-align: center;
   }
 }
