@@ -10,6 +10,11 @@ type Error = {
     startTime: Date;            // 發生時間
     endTime: Date;              // 抑制時間
 };
+type Defect = {
+    type: string;               // 缺陷種類
+    param: string;              // 缺陷參數
+    level: string;              // 缺陷程度
+};
 export interface ICollection {
     _id?: string;               // DB識別碼
 }
@@ -69,9 +74,8 @@ export interface IMolding extends IStage {
     injStroke?: string[];       // 計量位置
     packingPressure?: string[]; // 保壓壓力
     packingTime?: string[];     // 保壓時間
-    defectType?: string;        // 缺陷類型
-    defectLevel?: string;       // 缺陷參數
-    defectParameter?: string;   // 缺陷程度
+    timeIndex: Date;            // 記錄時間
+    defect: Defect;             // 缺陷資訊
 }
 export interface IDesignPost {
     projectNo: string;
