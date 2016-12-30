@@ -55,9 +55,9 @@ function renderProgress(name: string, isDone: boolean) {
 }
 
 Template['project'].events({
-    'click .identify'(e, tmpl) {
-        Router.go(`/ctrl/${tmpl.data._id}`);
-    },
+    // 'click .identify'(e, tmpl) {
+    //     Router.go(`/ctrl/${tmpl.data._id}`);
+    // },
     'click .design'(e, tmpl) {
         Router.go(`/design/${tmpl.data._id}`);
     },
