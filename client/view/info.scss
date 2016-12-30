@@ -16,18 +16,13 @@
       display: none !important;
     }
   }
-  >.content {
-    >.flex-grid>.row>.cell {
-      >.text-light {
-        text-align: center;
-      }
-      >.flex-grid>.row>.cell {
-        min-height: 280px;
-        max-height: 340px;
-        >table {
-          margin: unset;
-        }
-      }
-    }
+  table {
+    cursor: auto !important;
+    user-select: auto !important;
+    -moz-user-select: auto !important;
+    -webkit-user-select: auto !important;
+  }
+  th {
+    width: 40%;
   }
 }

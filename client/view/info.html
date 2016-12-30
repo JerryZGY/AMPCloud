@@ -1,22 +1,18 @@
 <template name="info">
   <div class="content">
-    <table class="table border hovered bordered">
-      <thead>
-        <tr>
-          <th>Server Version</th>
-          <th></th>
-          <th>接收時間</th>
-        </tr>
-      </thead>
+    {{#with info}}
+    <table class="table striped border hovered">
       <tbody>
-        {{#each logs}}
         <tr>
-          <td>{{projectNo}}</td>
-          <td>{{message}}</td>
-          <td>{{receivedAt}}</td>
+          <th>伺服器版本</th>
+          <td>v{{version}}</td>
         </tr>
-        {{/each}}
+        <tr>
+          <th>設計端網址</th>
+          <td>{{designUrl}}</td>
+        </tr>
       </tbody>
     </table>
+    {{/with}}
   </div>
 </template>
