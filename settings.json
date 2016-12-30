@@ -1,3 +1,6 @@
 {
+    "public": {
+        "designUrl": "http://140.135.96.39/icmold/AMPWebService2.asmx/InsertProjInfo"
+    },
     "designUrl": "http://140.135.96.39/icmold/AMPWebService2.asmx/InsertProjInfo"
 }
