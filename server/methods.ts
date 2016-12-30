@@ -2,13 +2,13 @@ import * as got from 'got';
 import * as Models from '../lib/models';
 import { Projects, Logs, Designs, Parts, Moldings } from '../lib/collections';
 Meteor.methods({
-    'createProject'(data: Models.IProject) {
+    createProject(data: Models.IProject) {
         const _id = data.projectNo;
         insertLog(data);
         Projects.upsert({ _id }, data);
         Meteor.call('notifyDesign', _id);
     },
-    async 'notifyDesign'(_id: string) {
+    async notifyDesign(_id: string) {
         const src = Projects.findOne({ _id });
         const data: Models.IDesignPost = {
             projectNo: src.projectNo,
@@ -24,11 +24,11 @@ Meteor.methods({
         await postToWebService(url, data);
         Logs.insert({ projectNo: _id, message: `Notify design`, receivedAt: new Date() });
     },
-    'updateDesign'(data: Models.IDesign) {
+    updateDesign(data: Models.IDesign) {
         insertLog(data);
         Designs.insert(data);
     },
-    'updateScheduling'(data: Models.IPart[]) {
+    updateScheduling(data: Models.IPart[]) {
         data.forEach(part => {
             const selector = { projectNo: part.projectNo, partNo: part.partNo };
             const parts = Parts.findOne(selector) || part;
@@ -36,7 +36,7 @@ Meteor.methods({
             Parts.upsert(selector, parts);
         });
     },
-    'updateMachining'(data: Models.IPart) {
+    updateMachining(data: Models.IPart) {
         const selector = { projectNo: data.projectNo, partNo: data.partNo };
         const part = Parts.findOne(selector) || data;
         const startTime = data.startTime;
@@ -56,7 +56,7 @@ Meteor.methods({
         insertLog(data);
         Parts.upsert(selector, part);
     },
-    'updateMolding'(data: Models.IMolding) {
+    updateMolding(data: Models.IMolding) {
         insertLog(data);
         Moldings.insert(data);
     },
