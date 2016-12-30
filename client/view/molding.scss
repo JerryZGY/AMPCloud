@@ -3,7 +3,7 @@
   @include app-bar($molding, $molding-hover);
   @include table();
   @include dialog();
-  .table,
+  .main,
   .tabcontrol {
     opacity: 0;
   }
