@@ -1,11 +1,22 @@
-.ctrl {
+@import '../scss/common.scss';
+.info {
+  @include table();
   >.app-bar {
+    >.app-bar-element {
+      display: none !important;
+      &.active {
+        cursor: pointer;
+        pointer-events: auto;
+      }
+      &:hover {
+        background-color: #EEEEEE !important;
+      }
+    }
     >.identify {
       display: none !important;
     }
   }
   >.content {
-    padding-top: 3.125rem;
     >.flex-grid>.row>.cell {
       >.text-light {
         text-align: center;

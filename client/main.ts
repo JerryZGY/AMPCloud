@@ -10,7 +10,8 @@ import '../node_modules/c3/c3.min.css';
 import './lib/moment';
 import './view/header';
 import './view/home';
-import './view/ctrl';
+import './view/info';
+import './view/log';
 import './view/design';
 import './view/scheduling';
 import './view/machining';
@@ -20,13 +21,15 @@ import ClientRouter from '../lib/clientRouter';
 export const Router = new ClientRouter();
 Router.initRoutes([
     { name: 'home', path: '/' },
-    { name: 'ctrl', path: '/ctrl/:id' },
-    { name: 'ctrl', path: '/design/all' },
+    { name: 'info', path: '/info' },
+    { name: 'log', path: '/log' },
+    // { name: 'ctrl', path: '/ctrl/:id' },
+    // { name: 'ctrl', path: '/design/all' },
     { name: 'design', path: '/design/:id' },
-    { name: 'ctrl', path: '/scheduling/all' },
+    // { name: 'ctrl', path: '/scheduling/all' },
     { name: 'scheduling', path: '/scheduling/:id' },
-    { name: 'ctrl', path: '/machining/all' },
+    // { name: 'ctrl', path: '/machining/all' },
     { name: 'machining', path: '/machining/:id' },
-    { name: 'ctrl', path: '/molding/all' },
+    // { name: 'ctrl', path: '/molding/all' },
     { name: 'molding', path: '/molding/:id' },
 ]);

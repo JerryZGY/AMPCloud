@@ -1,17 +1,17 @@
-import './ctrl.html';
-import './ctrl.scss';
+import './log.html';
+import './log.scss';
 import { Logs } from '../../lib/collections';
 
 let subscribeHandle: Meteor.SubscriptionHandle = null;
-Template['ctrl'].onCreated(function () {
-    $('body').attr('class', 'ctrl');
+Template['log'].onCreated(function () {
+    $('body').attr('class', 'log');
     subscribeHandle = this.subscribe('logs');
 });
 
-Template['ctrl'].onDestroyed(function () {
+Template['log'].onDestroyed(function () {
     if (subscribeHandle) { subscribeHandle.stop(); }
 });
 
-Template['ctrl'].helpers({
+Template['log'].helpers({
     logs: () => Logs.find({}, { sort: { receivedAt: -1 } }),
 });

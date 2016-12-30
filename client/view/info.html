@@ -1,0 +1,22 @@
+<template name="info">
+  <div class="content">
+    <table class="table border hovered bordered">
+      <thead>
+        <tr>
+          <th>Server Version</th>
+          <th></th>
+          <th>接收時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each logs}}
+        <tr>
+          <td>{{projectNo}}</td>
+          <td>{{message}}</td>
+          <td>{{receivedAt}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

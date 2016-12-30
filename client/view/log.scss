@@ -1,0 +1,33 @@
+@import '../scss/common.scss';
+.log {
+  @include table();
+  >.app-bar {
+    >.app-bar-element {
+      display: none !important;
+      &.active {
+        cursor: pointer;
+        pointer-events: auto;
+      }
+      &:hover {
+        background-color: #EEEEEE !important;
+      }
+    }
+    >.identify {
+      display: none !important;
+    }
+  }
+  >.content {
+    >.flex-grid>.row>.cell {
+      >.text-light {
+        text-align: center;
+      }
+      >.flex-grid>.row>.cell {
+        min-height: 280px;
+        max-height: 340px;
+        >table {
+          margin: unset;
+        }
+      }
+    }
+  }
+}
