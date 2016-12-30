@@ -57,8 +57,22 @@ Meteor.methods({
         Parts.upsert(selector, part);
     },
     updateMolding(data: Models.IMolding) {
+        let isEndedCalcData = /^Molding defect end$/.test(data.projectEvent);
+        if (data.defect) {
+            const selector: any = { projectNo: data.projectNo, moldNo: data.moldNo, type: 'calc' };
+            const modifier = { $set: { defect: data.defect } };
+            const options = { sort: { timeIndex: -1 } };
+            const latestMolding = Moldings.find(selector, options).fetch()[0];
+            if (latestMolding) {
+                selector.timeIndex = latestMolding.timeIndex;
+                Moldings.update(selector, modifier);
+            }
+            delete data.defect;
+        }
         insertLog(data);
-        Moldings.insert(data);
+        if (!isEndedCalcData) {
+            Moldings.insert(data);
+        }
     },
 });
 
