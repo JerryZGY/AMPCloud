@@ -1,3 +1,4 @@
+@import '../scss/common.scss';
 body>.app-bar {
   >.identify {
     float: left;
@@ -29,6 +30,7 @@ body>.app-bar {
     background-color: white;
   }
   >.app-bar-menu {
+    color: #0072C6;
     >li>ul {
       border: none;
       >li>a {
@@ -38,5 +40,27 @@ body>.app-bar {
         }
       }
     }
+  }
+  .dropdown-toggle {
+    background-color: white !important;
+    &:hover {
+      background-color: #EEEEEE !important;
+    }
+    &::before {
+      border-color: #0072C6 !important;
+    }
+  }
+  .logo {
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    display: inline-block;
+    background-size: cover;
+    vertical-align: middle;
+    background-image: url(favicon.ico);
+  }
+  .title {
+    margin: 0 5px;
+    vertical-align: middle;
   }
 }

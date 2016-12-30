@@ -1,6 +1,6 @@
 <template name="header">
   <div class="app-bar fixed-top">
-    <a class="home app-bar-element {{isActiveRoute 'Home'}}">
+    <a class="home app-bar-element {{isActiveRoute regex='Home|Info|Log'}}">
       <span class="mif-home"></span>
       <span>Home</span>
     </a>
@@ -23,20 +23,20 @@
     <ul class="app-bar-menu place-right">
       <li>
         <a class="dropdown-toggle">
-          <span class="mif-user mif-3x"></span>
-          <span>Jerry Zang</span>
+          <div class="logo"></div>
+          <span class="title">AMPCloud</span>
         </a>
         <ul class="d-menu" data-role="dropdown">
           <li>
-            <a>
+            <a class="info">
               <span class="mif-magic-wand"></span>
-              <span>Preferences</span>
+              <span>Infomation</span>
             </a>
           </li>
           <li>
-            <a>
-              <span class="mif-exit"></span>
-              <span>Logout</span>
+            <a class="log">
+              <span class="mif-file-text"></span>
+              <span>Log</span>
             </a>
           </li>
         </ul>

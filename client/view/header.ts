@@ -29,4 +29,10 @@ Template['header'].events({
     'click .app-bar>.molding'() {
         Router.go(`/molding/${id}`);
     },
+    'click .info'() {
+        Router.go(`/info`);
+    },
+    'click .log'() {
+        Router.go(`/log`);
+    },
 });
