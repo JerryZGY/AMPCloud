@@ -4,9 +4,13 @@ import { Projects, Logs, Designs, Parts, Moldings } from '../lib/collections';
 Meteor.methods({
     createProject(data: Models.IProject) {
         const _id = data.projectNo;
-        insertLog(data);
-        Projects.upsert({ _id }, data);
-        if (_id !== '2Y004-16120004') {
+        const event = data.projectEvent;
+        const templateNo = data.templateNo;
+        if (_id === '2Y004-16120004' && event.match(/notify/)) {
+            Projects.upsert({ _id }, { $set: { templateNo } });
+        } else {
+            insertLog(data);
+            Projects.upsert({ _id }, data);
             Meteor.call('notifyDesign', _id);
         }
     },
@@ -23,7 +27,9 @@ Meteor.methods({
             receivedAt: src.receivedAt,
         };
         const url = Meteor.settings['designUrl'];
-        await postToWebService(url, data);
+        if (url) {
+            await postToWebService(url, data);
+        }
         Logs.insert({ projectNo: _id, message: `Notify design`, receivedAt: new Date() });
     },
     updateDesign(data: Models.IDesign) {

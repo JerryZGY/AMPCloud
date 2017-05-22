@@ -9,7 +9,7 @@ Template['home'].onCreated(function () {
     subscribeHandle = this.subscribe('projects');
     Projects.find().observeChanges({
         changed(id, prop) {
-            if (id === '2Y004-16120004') {
+            if (id === '2Y004-16120004' && prop.hasOwnProperty('templateNo')) {
                 const no = parseInt(prop['templateNo']);
                 if (no) {
                     (window as any).showMetroDialog('#dialog');
