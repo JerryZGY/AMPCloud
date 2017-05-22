@@ -30,6 +30,10 @@
         "no-string-literal": false,
         "only-arrow-functions": [
             false
+        ],
+        "eofline": false,
+        "trailing-comma": [
+            false
         ]
     }
 }

@@ -21,7 +21,7 @@ POST http: //id40.webpat.co/amp/receive
 {
     "projectNo": "2Y004-16120004",
     "projectEvent": "Design start|middle|end",
-    "status": "standby | running | done | freeze | error",
+    "status": "running",
     "progress": 0,
     "MS_Create": "running",
     "MS_Surface_Design": "freeze",
@@ -30,7 +30,7 @@ POST http: //id40.webpat.co/amp/receive
     "MS_Detail": "freeze",
     "MB_Total_Asm": "freeze",
     "MB_Asm_Figure": "freeze",
-    "MB_Com_Figure": "freeze",
+    "MB_Com_Figure": "freeze"
 }
 ```
 - `(3)[Scheduling → AMP]`
@@ -44,7 +44,7 @@ POST http: //id40.webpat.co/amp/receive
         "machineNo": "YTM001",
         "method": "CNC",
         "expectedStartTime": "2016-12-20T16:00:00.0000000+08:00",
-        "expectedEndTime": "2016-12-21T16:00:00.0000000+08:00",
+        "expectedEndTime": "2016-12-21T16:00:00.0000000+08:00"
     }
 ]
 ```
@@ -54,7 +54,7 @@ POST http: //id40.webpat.co/amp/receive
 {
     "projectNo": "2Y004-16120004",
     "projectEvent": "Machining start|middle|error|resolve|end",
-    "status": "standby | running | done | freeze | error",
+    "status": "running",
     "progress": 0,
     "partNo": "161200041M_CA001",
     "machineNo": "YTM001",
@@ -70,7 +70,7 @@ POST http: //id40.webpat.co/amp/receive
         "threshold": "1.05",
         "ncCode": "N65 X77.789 Y50.156 Z-.2",
         "startTime": "2016-12-20T18:00:00.0000000+08:00",
-        "endTime": "2016-12-20T19:00:00.0000000+08:00",
+        "endTime": "2016-12-20T19:00:00.0000000+08:00"
     }
 }
 ```
@@ -80,9 +80,9 @@ POST http: //id40.webpat.co/amp/receive
 {
     "projectNo": "2Y004-16120004",
     "projectEvent": "Molding start|middle|defect end|end",
-    "status": "standby | running | done | freeze | error",
+    "status": "running",
     "progress": 0,
-    "type": "calc | real"
+    "type": "calc",
     "moldNo": "161200041M",
     "moldTemp": "60",
     "startPos": "13",
@@ -128,7 +128,7 @@ POST http: //id40.webpat.co/amp/receive
         "type": "充填不足",
         "param": "射出速度",
         "level": "嚴重"
-    }
+    },
     "timeIndex": "2016-12-20T20:00:00.0000000+08:00"
 }
 ```
