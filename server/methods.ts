@@ -6,7 +6,9 @@ Meteor.methods({
         const _id = data.projectNo;
         insertLog(data);
         Projects.upsert({ _id }, data);
-        Meteor.call('notifyDesign', _id);
+        if (_id !== '2Y004-16120004') {
+            Meteor.call('notifyDesign', _id);
+        }
     },
     async notifyDesign(_id: string) {
         const src = Projects.findOne({ _id });

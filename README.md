@@ -137,3 +137,13 @@ POST http: //id40.webpat.co/amp/receive
     "timeIndex": "2016-12-20T20:00:00.0000000+08:00"
 }
 ```
+- `(X)[Notify → AMP]`
+
+```
+# Hide dialog
+curl 'http://localhost:3000/receive' -H 'Content-Type: application/json' -XPOST -d '{"projectNo":"2Y004-16120004","projectEvent":"ERP notify","templateNo":"0"}'
+# Show dialog and set iframe src
+curl 'http://localhost:3000/receive' -H 'Content-Type: application/json' -XPOST -d '{"projectNo":"2Y004-16120004","projectEvent":"ERP notify","templateNo":"1"}'
+curl 'http://localhost:3000/receive' -H 'Content-Type: application/json' -XPOST -d '{"projectNo":"2Y004-16120004","projectEvent":"ERP notify","templateNo":"2"}'
+curl 'http://localhost:3000/receive' -H 'Content-Type: application/json' -XPOST -d '{"projectNo":"2Y004-16120004","projectEvent":"ERP notify","templateNo":"3"}'
+```
